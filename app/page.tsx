@@ -19,10 +19,10 @@ const allTeams = [
 ];
 
 export default function Home() {
-  const [totalUsers, setTotalUsers] = useState(0);
-  const [globalVotes, setGlobalVotes] = useState({});
-  const [matchesData, setMatchesData] = useState([]);
-  const [topUsers, setTopUsers] = useState([]);
+  const [totalUsers, setTotalUsers] = useState<number>(0);
+  const [globalVotes, setGlobalVotes] = useState<Record<string, string>>({});
+  const [matchesData, setMatchesData] = useState<any[]>([]);
+  const [topUsers, setTopUsers] = useState<any[]>([]);
 
   useEffect(() => {
     fetch('/api/db').then(r => r.json()).then(data => {

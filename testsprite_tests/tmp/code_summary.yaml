@@ -1,0 +1,66 @@
+project_name: crm
+tech_stack:
+  framework: Next.js 16.2.7
+  language: TypeScript
+  ui_library: TailwindCSS v4
+  runtime: React 19.2.4
+  fonts:
+    - Montserrat
+    - Inter
+    - JetBrains Mono
+  styling: Tailwind CSS with custom design tokens
+
+pages:
+  - path: /
+    file: app/page.tsx
+    description: Home/Landing page for FIFA 2026 Arena prediction platform
+    features:
+      - Fixed header with navigation links (Home, Schedule, Predictions, Teams, Stadiums, Leaderboard)
+      - Login and Join Now buttons in header
+      - Hero section with H1 heading
+      - CTA buttons for Start Predicting and View Schedule
+      - Live ticker/scrolling banner with live predictions count, top pick, active players, prize pool
+      - Featured Stars section with player cards
+      - Smart Analytics panel with accuracy stats
+      - Elite Ranks mini-leaderboard (top 3 users)
+      - Stadium HUD feature panel
+      - Host Cities Guide section with city tags (New York, Mexico City, Toronto, Los Angeles)
+      - MATCH STARTING SOON floating CTA button (desktop)
+      - Footer with navigation links and legal links
+      - Mobile bottom navigation bar (Home, Schedule, Predict, Ranks, Profile)
+
+  - path: /dashboard
+    file: app/dashboard/page.tsx
+    description: Predictions/Dashboard page
+    features:
+      - Predictions management interface
+
+  - path: /matches
+    file: app/matches/page.tsx
+    description: Match schedule page
+    features:
+      - Schedule of FIFA 2026 matches
+
+  - path: /leaderboard
+    file: app/leaderboard/page.tsx
+    description: Global leaderboard page
+    features:
+      - Rankings and points display
+
+navigation:
+  - label: Home
+    href: /
+  - label: Schedule
+    href: /matches
+  - label: Predictions
+    href: /dashboard
+  - label: Leaderboard
+    href: /leaderboard
+
+auth:
+  login: false
+  description: No authentication system implemented; Login and Join Now are static buttons
+
+server:
+  port: 3000
+  mode: development

@@ -1,0 +1,23 @@
+{
+  "status": "init",
+  "type": "frontend",
+  "serverMode": "development",
+  "serverPort": 62089,
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "crm",
+    "projectPath": "c:\\Users\\devpr\\OneDrive\\Desktop\\crm",
+    "testIds": [
+      "TC001",
+      "TC002",
+      "TC003",
+      "TC004",
+      "TC007"
+    ],
+    "additionalInstruction": "Only run 5 tests: TC002, TC003, TC004, TC001, TC007. The app runs on http://localhost:3000.",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-5pQ-uvR-LigzLIq8d7jFYGilZI_r8F9fdq-evOnlWFpzLCQfdBCWmDWSREEAI2g01pv7kVjwuE0AvCx2FPcKZlfTw3QDSOlQ7Mnc15x2pLwo0O4BZER_YOisWnWDyNoi7gA"
+    }
+  }
+}

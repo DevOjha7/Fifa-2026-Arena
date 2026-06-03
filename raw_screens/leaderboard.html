@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Leaderboard | FIFA 2026 Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700;800;900&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        :root {
+            --glass-bg: rgba(13, 28, 45, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --neon-glow: 0 0 15px rgba(71, 214, 255, 0.3);
+        }
+
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--neon-glow);
+        }
+
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(165, 231, 255, 0.5);
+        }
+
+        .data-grid-row:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #47d6ff;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#725f00",
+                        "inverse-surface": "#d4e4fa",
+                        "surface-container": "#122131",
+                        "surface-variant": "#273647",
+                        "primary-container": "#00d2ff",
+                        "primary-fixed": "#b6ebff",
+                        "on-secondary": "#3a3000",
+                        "tertiary-fixed": "#d7e3f6",
+                        "inverse-primary": "#00677f",
+                        "surface-container-low": "#0d1c2d",
+                        "surface": "#051424",
+                        "on-tertiary": "#26313f",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "surface-tint": "#47d6ff",
+                        "outline-variant": "#3c494e",
+                        "error": "#ffb4ab",
+                        "on-surface": "#d4e4fa",
+                        "surface-container-lowest": "#010f1f",
+                        "surface-container-high": "#1c2b3c",
+                        "on-tertiary-fixed-variant": "#3c4857",
+                        "primary": "#a5e7ff",
+                        "secondary": "#fff9ef",
+                        "surface-container-highest": "#273647",
+                        "on-primary-fixed": "#001f28",
+                        "tertiary": "#d2def1",
+                        "surface-dim": "#051424",
+                        "secondary-container": "#ffdb3c",
+                        "surface-bright": "#2c3a4c",
+                        "secondary-fixed-dim": "#e9c400",
+                        "outline": "#859399",
+                        "on-tertiary-fixed": "#111c2a",
+                        "inverse-on-surface": "#233143",
+                        "tertiary-fixed-dim": "#bbc7da",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b6c2d4",
+                        "primary-fixed-dim": "#47d6ff",
+                        "secondary-fixed": "#ffe16d",
+                        "on-background": "#d4e4fa",
+                        "on-secondary-fixed": "#221b00",
+                        "on-primary": "#003543",
+                        "on-primary-fixed-variant": "#004e60",
+                        "on-primary-container": "#00566a",
+                        "on-secondary-fixed-variant": "#544600",
+                        "on-surface-variant": "#bbc9cf",
+                        "on-tertiary-container": "#44505f",
+                        "background": "#051424"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "data-label": ["JetBrains Mono"],
+                        "data-value": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "data-label": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "data-value": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(71,214,255,0.15)] flex justify-between items-center h-20 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-lg text-headline-lg font-black text-primary tracking-tighter cursor-pointer active:scale-95 transition-transform">FIFA 2026 Arena</span>
+<div class="hidden md:flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#">Schedule</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#">Predictions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#">Teams</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 transition-transform" href="#">Stadiums</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 cursor-pointer active:scale-95 transition-transform" href="#">Leaderboard</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-body-md text-body-md text-on-surface-variant hover:bg-white/5 transition-all duration-300 px-4 py-2 rounded-lg">Login</button>
+<button class="font-body-md text-body-md bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold hover:shadow-[0_0_15px_#47d6ff] transition-all active:scale-95">Join Now</button>
+</div>
+</nav>
+<!-- Side Navigation (Desktop Only) -->
+<aside class="hidden lg:flex flex-col py-8 gap-4 h-full w-72 fixed left-0 top-0 z-40 bg-surface-container-low/90 dark:bg-surface-container-low/90 backdrop-blur-2xl border-r border-white/10 shadow-2xl pt-24">
+<div class="px-6 mb-8 flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close-up professional headshot of a young male gamer with a determined expression, wearing a sleek gaming headset. The lighting is cinematic with blue and cyan neon rim lights, reflecting the high-stakes FIFA 2026 Arena aesthetic. The background is softly blurred with digital data patterns and abstract stadium lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxRGrjfI2akbCcrAW2DL9iJHg3aUZ4OCXuQ5gF84R1anqn7fZyFRHegv2EZYXgGgvxEorgtYeNnwFskMGnhCC8F-bGVqRc3L3Ciu-v6jr2zithaBrsLcqyqgj0PUo0yD23SZFblU4XeqPidRHJz4EfqhXsnfpSF4U_-7mIm6xgxcKuBecpFSs_G_ZaitNdi9HwMn5IYMZUkx6sovQz7K7sa1Sm2DYX-a3mLSvbENEkNhZ03qvPMPrQUj0_nqnC-uy9Z1g0CnjRKx8"/>
+</div>
+<div>
+<p class="font-headline-lg text-headline-lg text-primary drop-shadow-[0_0_10px_#47d6ff] text-sm">Predictor Pro</p>
+<p class="text-xs text-on-surface-variant">Global Rank: #420</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-4 px-6 py-3 font-data-label text-data-label uppercase tracking-widest text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span> Home
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-data-label text-data-label uppercase tracking-widest text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span> Schedule
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-data-label text-data-label uppercase tracking-widest text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span> Predictions
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-data-label text-data-label uppercase tracking-widest bg-primary/10 text-primary border-r-4 border-primary hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span> Leaderboard
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-data-label text-data-label uppercase tracking-widest text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span> Statistics
+            </a>
+<a class="flex items-center gap-4 px-6 py-3 font-data-label text-data-label uppercase tracking-widest text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span> Account
+            </a>
+</nav>
+<div class="mt-auto px-6">
+<button class="w-full bg-primary/20 border border-primary text-primary py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">
+                Place Prediction
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:pl-72 pt-28 pb-12 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<!-- Header & Stats -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-12">
+<div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg font-black tracking-tighter neon-text-glow mb-2">WORLD RANKINGS</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">The global arena of elite tacticians. Every prediction brings you closer to legendary status. Live standings update every 60 seconds.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full border border-primary/20 text-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> LIVE REFRESH
+                    </span>
+<span class="text-on-surface-variant text-sm">Next update in <span class="font-data-label" id="timer">59s</span></span>
+</div>
+</header>
+<!-- Your Rank Highlight (Bento Section) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="md:col-span-3 glass-card rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+<!-- Background Accent -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative flex flex-col items-center">
+<div class="w-24 h-24 rounded-full border-4 border-primary p-1 shadow-[0_0_25px_#47d6ff]">
+<img alt="Me" class="w-full h-full rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBirxC9qiSBInqS8JRRwMn3Rt8TCMp084BUyZVGmABAOkz-SvddCZwKSpUi5_RGxcpheOBBXY0RrWlI_758M8B1w75GVpP5pNSYIBeSdEcuQv65V8die0OrKsqqWvLQQs8UjgOgZj6mMsMkoQmR-gajAJgiPHbH6cRbwNA1mQaQCTmv8P-qjX4YIdsq8O3cyIWehbHNpUSZIA2lHb0OPs7jPGJkH5zylJGnt9eICT1S4eUHXk1FmsayQWM8JqtJ_tEangXoAnp2dfE"/>
+</div>
+<div class="absolute -bottom-2 bg-primary text-on-primary font-bold text-xs px-3 py-1 rounded-full uppercase tracking-tighter">YOU</div>
+</div>
+<div class="flex-1 text-center md:text-left">
+<h2 class="font-headline-xl text-headline-xl mb-1">PredictorPro_2026</h2>
+<div class="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
+<div class="flex flex-col">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase">Current Rank</span>
+<span class="font-display-lg text-display-lg-mobile text-primary leading-none">#420</span>
+</div>
+<div class="w-px h-12 bg-white/10 self-center hidden md:block"></div>
+<div class="flex flex-col">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase">Accuracy</span>
+<span class="font-display-lg text-display-lg-mobile text-secondary leading-none">88.4%</span>
+</div>
+<div class="w-px h-12 bg-white/10 self-center hidden md:block"></div>
+<div class="flex flex-col">
+<span class="font-data-label text-data-label text-on-surface-variant uppercase">Total Points</span>
+<span class="font-display-lg text-display-lg-mobile text-on-surface leading-none">12,450</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 w-full md:w-auto">
+<button class="bg-primary text-on-primary py-3 px-8 rounded-xl font-bold hover:scale-105 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="share">share</span> Share Stats
+                        </button>
+<button class="bg-white/5 border border-white/10 text-on-surface-variant py-3 px-8 rounded-xl font-bold hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="history">history</span> History
+                        </button>
+</div>
+</div>
+<div class="glass-card rounded-3xl p-8 flex flex-col justify-center items-center text-center border-primary/40 bg-primary/5">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="military_tech">military_tech</span>
+<h3 class="font-headline-lg text-headline-lg mb-2">GOLD TIER</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Top 5% of global predictors. 550 points until Platinum Tier.</p>
+<div class="w-full bg-white/10 h-3 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-4/5 shadow-[0_0_10px_#47d6ff]"></div>
+</div>
+</div>
+</section>
+<!-- Leaderboard Table Section -->
+<section class="glass-card rounded-3xl overflow-hidden mb-12">
+<div class="px-8 py-6 border-b border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-high/50">
+<h3 class="font-headline-lg text-headline-lg">Top Predictors</h3>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:border-primary/50 transition-all" placeholder="Search users..." type="text"/>
+</div>
+<button class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-sm hover:bg-white/10 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span> Filter
+                        </button>
+</div>
+</div>
+<!-- High Performance Data Table -->
+<div class="overflow-x-auto custom-scrollbar">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low/80 border-b border-white/5">
+<th class="px-8 py-5 font-data-label text-data-label text-on-surface-variant uppercase">Rank</th>
+<th class="px-8 py-5 font-data-label text-data-label text-on-surface-variant uppercase">Username</th>
+<th class="px-8 py-5 font-data-label text-data-label text-on-surface-variant uppercase text-center">Accuracy</th>
+<th class="px-8 py-5 font-data-label text-data-label text-on-surface-variant uppercase text-center">Predictions</th>
+<th class="px-8 py-5 font-data-label text-data-label text-on-surface-variant uppercase text-right">Points</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<!-- Top 1 -->
+<tr class="data-grid-row border-b border-white/5 hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<span class="font-data-value text-data-value text-secondary text-2xl">01</span>
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-secondary shadow-[0_0_10px_rgba(255,219,60,0.3)] overflow-hidden">
+<img alt="Top Predictor" class="w-full h-full object-cover" data-alt="Close-up portrait of an older, distinguished man with silver hair and a sharp, intellectual look, wearing a premium dark navy suit. The style is hyper-realistic with deep cinematic lighting and dramatic shadows. He is set against an abstract backdrop of digital football analytics and glowing golden particle effects, signifying his 'Football Genius' status." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCe_P60wl6yVXSkrKPv-36pv2oYJ_KNquvse9gcUBGEQhYH_oww8IVkzz2InaAiVk_Y13IOYk0WJDNu1CMclnUXYDGMYrH98jRp3-AGFdapMvdQG-9YfUcQ9oM27ACz_xdeYBaWGLro8CHI9PUCV1oRMw9HkR796FPqj4_9ftFc9Euh9z3kSWXZ9vMgSeVQqM6Of7Z5eV2s-2zcNr3cbfhIeXTx6kp3m2srobdGIkpu92ahViXjPOQ2vBZvXjNNcixYkJIp3O8G2Q0"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">Tactical_Titan</span>
+<span class="text-xl">🇩🇪</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-secondary/20 text-secondary border border-secondary/30 font-bold uppercase tracking-widest">Prediction King</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<span class="font-data-value text-data-value text-primary">94.8%</span>
+</td>
+<td class="px-8 py-6 text-center font-data-label text-data-label">1,248</td>
+<td class="px-8 py-6 text-right">
+<span class="font-data-value text-data-value text-on-surface">48,290</span>
+</td>
+</tr>
+<!-- Top 2 -->
+<tr class="data-grid-row border-b border-white/5 hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<span class="font-data-value text-data-value text-on-surface-variant text-2xl">02</span>
+<span class="material-symbols-outlined text-on-surface-variant text-2xl" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-primary/50 overflow-hidden">
+<img alt="Predictor 2" class="w-full h-full object-cover" data-alt="Close-up cinematic headshot of a confident tech-savvy woman in her late 20s, with holographic light patterns reflecting on her face. She has short, stylish hair and wears futuristic glasses. The background features complex nodes and connections of a global network, colored in deep blues and neon cyans. The overall mood is intense, focused, and high-performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHmELHevMc4Tawa3QF_5yaQPkYFGRFPhe2hwEJYVuFiW6TbV68KV43M30BiiZ9eEA4eucL64Azb46ZBN8OWbMGuntT1hb5TyGzqrkGIeu9J3xDLKx-RJEBLV32zvLqu0STWhR43uzqfP0xg0b1MrbTjSrDVvX1tka5_hbykuaknUU27oeNqeAQSnHVyQjVwWViRbs4CdM6q4zoiDziOGO08yenrS1VjlcL0qVdjHsOlzJWhsjjt21yRan_IgMUPln8L_7MFB83Rfw"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">Algorithm_Ace</span>
+<span class="text-xl">🇬🇧</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/30 font-bold uppercase tracking-widest">Football Genius</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<span class="font-data-value text-data-value text-primary">92.1%</span>
+</td>
+<td class="px-8 py-6 text-center font-data-label text-data-label">1,102</td>
+<td class="px-8 py-6 text-right">
+<span class="font-data-value text-data-value text-on-surface">42,550</span>
+</td>
+</tr>
+<!-- Top 3 -->
+<tr class="data-grid-row border-b border-white/5 hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-6">
+<div class="flex items-center gap-2">
+<span class="font-data-value text-data-value text-on-secondary-container text-2xl">03</span>
+<span class="material-symbols-outlined text-on-secondary-container text-2xl" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full border border-on-secondary-container/50 overflow-hidden">
+<img alt="Predictor 3" class="w-full h-full object-cover" data-alt="Portrait of a young, intense man with sharp features, wearing a minimalist black tactical turtleneck. Neon cyan light from off-screen highlights his profile. The background is a dark, atmospheric locker room setting with glowing digital screens displaying match formations. This represents the 'Tactical Master' aesthetic, blending sport and high-tech analysis." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNz8gbvy-s0ddwZM_zL12aC4SXEJqXclR1N5kUYSAjsffahLXtqJi7P_Y3kX8-kSwO5ITNTzESkV9xfKJmuZYDpIttOyyacmIxMDgJERzDmJj7DwL7l0Qhdyf-4uXcMhozFRx30RfOeb41INH4ia2rAhSxLK4A43tk61YIhh8KSbRIeR26AdHvbFJ-mQ-r1cs75dFngGfRvAaU-brdBQ_lubb6E-B-Evhj_d2CsfnQl2o28-2OAg7txMle1LhjMJP7pcd34RZxqNI"/>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface text-lg group-hover:text-primary transition-colors">Maestro_Mind</span>
+<span class="text-xl">🇧🇷</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-surface-variant text-on-surface-variant border border-white/10 font-bold uppercase tracking-widest">Tactical Master</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center">
+<span class="font-data-value text-data-value text-primary">89.9%</span>
+</td>
+<td class="px-8 py-6 text-center font-data-label text-data-label">984</td>
+<td class="px-8 py-6 text-right">
+<span class="font-data-value text-data-value text-on-surface">39,120</span>
+</td>
+</tr>
+<!-- 4-10 generic entries -->
+<tr class="data-grid-row border-b border-white/5 hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-6 font-data-value text-data-value text-on-surface-variant">04</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-white/10 overflow-hidden">
+<img alt="Predictor 4" class="w-full h-full object-cover" data-alt="Close-up headshot of a focused male gamer with neon lighting highlights. The style is sleek and cinematic, set against a dark, pitch-inspired background with subtle hexagonal textures. A slight cyan glow outlines his silhouette, creating a professional, high-performance competitive atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFs4_m6TGo43GHIPNuRh8tOH9SfHb0jVGo0oGIj-Gg9E4gVJwRL6Kd_nc7jZCSj8Y5L5Iu_Y0r8pIYNlVGhYvouvEHssUZVEw0EQmLCojwLNmhkSjshoDetbRp37GorITlLQBDZZ93RAhpLFwM7uxKXVbLqfy5RYir_6E5wu7kWFv7i0vsjGqq-3ip-OF9HCx51OEfhyVc5P5335X61NLQwPN7wp25kZqYyhfCV9zY4aYDV6x3NznMxyAKX8xeX4GB0pcoUfytHdk"/>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">NeymarFan88</span>
+<span class="text-lg">🇫🇷</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center"><span class="font-data-value text-data-value">87.5%</span></td>
+<td class="px-8 py-6 text-center font-data-label text-data-label">850</td>
+<td class="px-8 py-6 text-right font-data-value text-data-value">31,440</td>
+</tr>
+<tr class="data-grid-row border-b border-white/5 hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-6 font-data-value text-data-value text-on-surface-variant">05</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-white/10 overflow-hidden">
+<img alt="Predictor 5" class="w-full h-full object-cover" data-alt="Portrait of a focused woman in her 30s with a sharp, analytical expression, looking directly into the camera. Soft blue ambient lighting illuminates her face, reflecting from a nearby digital screen. The background is a clean, glassmorphic office interior with subtle stadium views at night through the window. It is a sophisticated, corporate-modern sports analysis vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB78GKQyaR8EYGkrEBzpOlkTHkP3nakY0b_Cm8Yt_xh5K6iGbfcy7Y7pQn3LeGDzVv2cK-z3305CT14KUITEmozaXStLo-7dxXedRZSS7iJv58nWpvRCRe97OvvhD-379D3iYZz1aUICaNm2tAZKnfteA4q3BIdoEo3JtfkP12WvbaIgBVfqkIR0tG_moPR0pPXcwGDcoVwOeYdipWi_RzaEcdGZLG6pe1BzcWQ6FUhQ2s9OuQy2J7_fgC8FDwBYrt4Sv_IYSgkTc4"/>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">The_Oracle</span>
+<span class="text-lg">🇦🇷</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center"><span class="font-data-value text-data-value">86.2%</span></td>
+<td class="px-8 py-6 text-center font-data-label text-data-label">742</td>
+<td class="px-8 py-6 text-right font-data-value text-data-value">29,880</td>
+</tr>
+<tr class="data-grid-row border-b border-white/5 hover:bg-primary/5 transition-colors group">
+<td class="px-8 py-6 font-data-value text-data-value text-on-surface-variant">06</td>
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full border border-white/10 overflow-hidden">
+<img alt="Predictor 6" class="w-full h-full object-cover" data-alt="Cinematic close-up of a young woman with a sharp gaze, wearing a dark sport-tech jacket. Blue neon light accents her jawline and hair. The background is a sophisticated fusion of digital stadium overlays and abstract carbon fiber textures. The lighting is low-key, emphasizing the premium and high-stakes mood of the prediction leaderboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8v2xa-qKKeqJY36LUsg052FcvF_2HSeWmq0tv91grdpzbJGBB5S6ZFx0doWssSFBDU4N6VPoSRAVfDHB9GYnNNgShyVvisjOWs_rr_LjayLWT7ZqUv3Xpopbb6gy9dHwCOtb19d4a4bqdj8R5SvGKHPwLvHxGjP2eWpSWJuZbgs_Md3ugoRXiPEaBiMFCBJ2Kd2viuUg15L7cfuJ6A2Y3NWWdJJMCOa-qDedwSLqumcnbTyv_IfgtX4J4n9T24jCVzC_cl4xcs4M"/>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface group-hover:text-primary transition-colors">SoccerScout</span>
+<span class="text-lg">🇯🇵</span>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 text-center"><span class="font-data-value text-data-value">85.4%</span></td>
+<td class="px-8 py-6 text-center font-data-label text-data-label">690</td>
+<td class="px-8 py-6 text-right font-data-value text-data-value">27,150</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Pagination -->
+<div class="px-8 py-6 border-t border-white/10 flex justify-between items-center bg-surface-container-high/30">
+<p class="text-sm text-on-surface-variant">Showing <span class="text-on-surface">1-10</span> of <span class="text-on-surface">1,240,582</span> predictors</p>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-on-surface-variant hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-on-surface hover:bg-white/5 transition-all">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-on-surface hover:bg-white/5 transition-all">3</button>
+<span class="flex items-center px-2 text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 text-on-surface-variant hover:bg-white/5 transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5 lg:pl-72">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-margin-desktop max-w-container-max mx-auto">
+<div>
+<span class="font-headline-lg text-headline-lg text-primary mb-4 block">FIFA 2026 Arena</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md opacity-80">
+                    The ultimate destination for global football fans to prove their tactical dominance. Predict matches, climb the rankings, and earn your place among the legends.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-3">
+<h4 class="font-data-label text-data-label text-primary uppercase">Platform</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-data-label text-data-label text-primary uppercase">Support</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Tournament Rules</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Contact Support</a>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto pt-12 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2026 FIFA World Cup Prediction Arena. All rights reserved.</p>
+</div>
+</footer>
+<script>
+        // Simple interactive elements
+        let timeLeft = 59;
+        const timerElement = document.getElementById('timer');
+
+        setInterval(() => {
+            timeLeft--;
+            if (timeLeft < 0) timeLeft = 59;
+            timerElement.innerText = `${timeLeft}s`;
+        }, 1000);
+
+        // Micro-interactions for table rows
+        document.querySelectorAll('.data-grid-row').forEach(row => {
+            row.addEventListener('click', () => {
+                row.classList.add('scale-[0.99]');
+                setTimeout(() => row.classList.remove('scale-[0.99]'), 100);
+            });
+        });
+    </script>
+</body></html>

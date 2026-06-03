@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Statistics Dashboard | FIFA 2026 Arena</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(71, 214, 255, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(71, 214, 255, 0.6); }
+        }
+        .neon-glow { animation: pulse-glow 3s infinite; }
+        .glass-panel {
+            background: rgba(13, 28, 45, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .chart-gradient-blue { background: linear-gradient(180deg, #47d6ff 0%, rgba(71, 214, 255, 0) 100%); }
+        .chart-gradient-gold { background: linear-gradient(180deg, #ffdb3c 0%, rgba(255, 219, 60, 0) 100%); }
+        
+        /* Custom scrollbar for analytics dashboards */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #051424; }
+        ::-webkit-scrollbar-thumb { background: #273647; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #47d6ff; }
+
+        .immersion-bg {
+            background-image: linear-gradient(to bottom, rgba(5, 20, 36, 0.92), rgba(5, 20, 36, 0.92)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlZNKsE6hWMGCdrsRsdeIPRmWd7dvJFgEzwmnBZZj3cathcNz3dcg0yt5zs2ovXLJ3nBeJsgO0xYWjlT2iGELNWhd1X-j2zokOL9jvIvTxu2RABu8NBwLYtSKNLFl7DQPTnLTcxbnJbFTnYSBIfjZwDSyX8_tLIcofwAfN4Hvbhspbfq91ck274l0Ccce4qCE3EaY9y1r3zx75cHWt7vqRzmm0Ajp1BuFZ0RxiRCVMMk4Uic7y9n7U8ptV1yBPbL-mlIktgRlhFQM');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .corner-peek-14 {
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAi_gHXAhKmc3u3z_coBxkhQ1J-pSpCbt_p0Jc-O9Dy7PCT0aHAnPnnfC6VWPRE0V0ycGO5vuKlrPY1SRe959JbzzDw5ZeFCJ_XTr7gjJLD4hVFcuykJ6lKPsh1AYh_DJNZ35_5pLNW-z1eK_Kr18o5yyV5MZcg4Th2rNt0NnM1KlYRohWB_FqTd5CKOrIkixH-bstzkgrPE7IusbOaQgSLMEzx19XwcQ7BHkse9vsvfJrV4bFHxM_UM91AYfnIB_aktbQREehMvBY');
+            background-size: 300px;
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-blend-mode: luminosity;
+        }
+
+        .corner-peek-12 {
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDU0f72oUH517Qathbf-Ff4qszHh8h5EY3GBdlIQ4wt5RruAOMXErowoWLaMuv2dcArxGvsuqerQcObgboSANYJo6XQxAhic-FyADEsj3gjcM8vbDhr_249BKfNADVGw550PEusonleRzRB2AY8iY1F9YECL1epPOKoHok5l-cmoLrYJYqPogy6ruh2OhYH_4VQMkXKLS6WU0el80FaGe32YMrTI29H72QHk2l8AQdhXBTj8JQueCn8nLnIFfPx5oRAGcZINL3E9Zk');
+            background-size: 300px;
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-blend-mode: soft-light;
+        }
+
+        .stadium-gauge-bg {
+            background-image: linear-gradient(rgba(13, 28, 45, 0.6), rgba(13, 28, 45, 0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlZNKsE6hWMGCdrsRsdeIPRmWd7dvJFgEzwmnBZZj3cathcNz3dcg0yt5zs2ovXLJ3nBeJsgO0xYWjlT2iGELNWhd1X-j2zokOL9jvIvTxu2RABu8NBwLYtSKNLFl7DQPTnLTcxbnJbFTnYSBIfjZwDSyX8_tLIcofwAfN4Hvbhspbfq91ck274l0Ccce4qCE3EaY9y1r3zx75cHWt7vqRzmm0Ajp1BuFZ0RxiRCVMMk4Uic7y9n7U8ptV1yBPbL-mlIktgRlhFQM');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "on-secondary-container": "#725f00",
+                "inverse-surface": "#d4e4fa",
+                "surface-container": "#122131",
+                "surface-variant": "#273647",
+                "primary-container": "#00d2ff",
+                "primary-fixed": "#b6ebff",
+                "on-secondary": "#3a3000",
+                "tertiary-fixed": "#d7e3f6",
+                "inverse-primary": "#00677f",
+                "surface-container-low": "#0d1c2d",
+                "surface": "#051424",
+                "on-tertiary": "#26313f",
+                "on-error-container": "#ffdad6",
+                "error-container": "#93000a",
+                "surface-tint": "#47d6ff",
+                "outline-variant": "#3c494e",
+                "error": "#ffb4ab",
+                "on-surface": "#d4e4fa",
+                "surface-container-lowest": "#010f1f",
+                "surface-container-high": "#1c2b3c",
+                "on-tertiary-fixed-variant": "#3c4857",
+                "primary": "#a5e7ff",
+                "secondary": "#fff9ef",
+                "surface-container-highest": "#273647",
+                "on-primary-fixed": "#001f28",
+                "tertiary": "#d2def1",
+                "surface-dim": "#051424",
+                "secondary-container": "#ffdb3c",
+                "surface-bright": "#2c3a4c",
+                "secondary-fixed-dim": "#e9c400",
+                "outline": "#859399",
+                "on-tertiary-fixed": "#111c2a",
+                "inverse-on-surface": "#233143",
+                "tertiary-fixed-dim": "#bbc7da",
+                "on-error": "#690005",
+                "tertiary-container": "#b6c2d4",
+                "primary-fixed-dim": "#47d6ff",
+                "secondary-fixed": "#ffe16d",
+                "on-background": "#d4e4fa",
+                "on-secondary-fixed": "#221b00",
+                "on-primary": "#003543",
+                "on-primary-fixed-variant": "#004e60",
+                "on-primary-container": "#00566a",
+                "on-secondary-fixed-variant": "#544600",
+                "on-surface-variant": "#bbc9cf",
+                "on-tertiary-container": "#44505f",
+                "background": "#051424"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "spacing": {
+                "margin-desktop": "64px",
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "container-max": "1440px",
+                "base": "8px"
+              },
+              "fontFamily": {
+                "data-label": ["JetBrains Mono"],
+                "data-value": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "display-lg-mobile": ["Montserrat"],
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-xl": ["Montserrat"],
+                "display-lg": ["Montserrat"]
+              },
+              "fontSize": {
+                "data-label": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "data-value": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-xl": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden immersion-bg">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(71,214,255,0.15)]">
+<div class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-black text-primary tracking-tighter cursor-pointer active:scale-95 transition-transform">
+                FIFA 2026 Arena
+            </div>
+<div class="hidden lg:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Schedule</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Predictions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Teams</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Stadiums</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Leaderboard</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-all duration-300 px-4 py-2 hover:bg-white/5 rounded-lg">Login</button>
+<button class="bg-primary-container text-on-primary-container font-bold px-6 py-2 rounded-lg hover:scale-105 transition-transform active:scale-95 shadow-[0_0_15px_rgba(0,210,210,0.4)]">Join Now</button>
+</div>
+</div>
+</nav>
+<!-- Side Navigation Bar -->
+<aside class="hidden md:flex flex-col py-8 gap-4 h-full w-72 fixed left-0 top-0 z-40 bg-surface-container-low/90 dark:bg-surface-container-low/90 backdrop-blur-2xl border-r border-white/10 shadow-2xl pt-24">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full border-2 border-primary p-1">
+<img alt="User Profile" class="w-full h-full rounded-full bg-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTtkQQIr41wa_wdzuClEmg-jaKKNeGyv-_W-vqOiv4hgu6LWp6lPLXKuKEgn8wxiR8W1PHuCvhiUP4UEPGeKXqPwhIBvA2_FmvqYN_qhaDysvII8i3Dqfgf3qZ6ofrltSDbmfHSZUv70RkANC4mw9ZdZDpLGXwmH7hF4kefTMscDG9y7GHqXE6PTsLDgXjbEPMr_lHh6dtD6sf7uyVY1iMHsiHHDLnDW5zFb9e1LtneNcCuSP18j_y-OjLM2ULFmhQq3EzxuSpJZk"/>
+</div>
+<div>
+<h3 class="font-headline-lg text-base text-on-surface font-bold leading-none">Predictor Pro</h3>
+<p class="font-data-label text-[10px] text-primary uppercase tracking-widest mt-1">Global Rank: #420</p>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-bold py-3 rounded-lg text-sm hover:scale-[1.02] transition-transform active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">rocket_launch</span>
+                Place Prediction
+            </button>
+</div>
+<nav class="flex flex-col">
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Home</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Schedule</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Predictions</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Teams</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="stadium">stadium</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Stadiums</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Leaderboard</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 bg-primary/10 text-primary border-r-4 border-primary hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Statistics</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-on-surface-variant hover:bg-white/5 hover:text-on-surface hover:translate-x-1 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Account</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="md:ml-72 pt-24 pb-12 px-6 lg:px-margin-desktop min-h-screen relative">
+<!-- Dashboard Header -->
+<header class="mb-12 relative z-10">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary uppercase leading-tight tracking-tighter">
+                Global Insights <br/> <span class="text-secondary-container drop-shadow-[0_0_15px_rgba(255,219,60,0.4)]">Dashboard</span>
+</h1>
+<p class="text-on-surface-variant font-body-lg max-w-2xl mt-4">
+                Real-time aggregate data from over 4.2 million community predictions. Harness the "Wisdom of the Crowd" for the upcoming 2026 World Cup.
+            </p>
+</header>
+<!-- KPI Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-12 relative z-10">
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl" data-icon="groups">groups</span>
+</div>
+<p class="font-data-label text-data-label uppercase text-on-surface-variant">Total Predictions</p>
+<h4 class="font-data-value text-4xl text-primary mt-2">4,281,902</h4>
+<div class="flex items-center gap-2 mt-4 text-green-400">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="text-xs font-bold font-data-label">+12.4% Today</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl" data-icon="sports_soccer">sports_soccer</span>
+</div>
+<p class="font-data-label text-data-label uppercase text-on-surface-variant">Top Pick (Winner)</p>
+<h4 class="font-data-value text-4xl text-primary mt-2">Brazil</h4>
+<div class="flex items-center gap-2 mt-4 text-secondary-container">
+<span class="material-symbols-outlined text-sm">stars</span>
+<span class="text-xs font-bold font-data-label">28.5% of All Votes</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl" data-icon="query_stats">query_stats</span>
+</div>
+<p class="font-data-label text-data-label uppercase text-on-surface-variant">Prediction Accuracy</p>
+<h4 class="font-data-value text-4xl text-primary mt-2">64.2%</h4>
+<div class="flex items-center gap-2 mt-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="text-xs font-bold font-data-label">Based on Regional Qualifiers</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl relative overflow-hidden group border-primary/30 neon-glow">
+<div class="absolute -right-4 -bottom-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-8xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<p class="font-data-label text-data-label uppercase text-on-surface-variant">Total Points Pool</p>
+<h4 class="font-data-value text-4xl text-secondary-container mt-2">12.5M</h4>
+<div class="flex items-center gap-2 mt-4 text-primary">
+<span class="material-symbols-outlined text-sm">workspace_premium</span>
+<span class="text-xs font-bold font-data-label">Exclusive Gold Prizes</span>
+</div>
+</div>
+</div>
+<!-- Analytics Bento Grid -->
+<div class="grid grid-cols-12 gap-gutter relative z-10">
+<!-- Prediction Trends (Line Graph) -->
+<div class="col-span-12 lg:col-span-8 glass-panel p-8 rounded-2xl corner-peek-14">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Prediction Trends</h3>
+<p class="text-on-surface-variant">Global participation over the last 30 days</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-1 rounded bg-primary/10 text-primary text-xs font-bold font-data-label">1D</button>
+<button class="px-4 py-1 rounded bg-white/5 text-on-surface-variant text-xs font-bold font-data-label">7D</button>
+<button class="px-4 py-1 rounded bg-white/5 text-on-surface-variant text-xs font-bold font-data-label">30D</button>
+</div>
+</div>
+<!-- Simulated Line Chart -->
+<div class="h-64 flex items-end gap-1 px-4 relative">
+<!-- Chart Bars for visual backup -->
+<div class="w-full h-full flex items-end gap-2">
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[40%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[35%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[50%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[45%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[65%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[60%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[80%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[75%] rounded-t"></div>
+<div class="flex-1 bg-primary/20 hover:bg-primary transition-all duration-300 h-[95%] rounded-t neon-glow"></div>
+</div>
+</div>
+<div class="grid grid-cols-9 mt-4 px-4 text-[10px] font-data-label text-on-surface-variant uppercase text-center">
+<span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span><span>Mon</span><span>Tue</span>
+</div>
+</div>
+<!-- Fan Confidence Score (Gauge) -->
+<div class="col-span-12 lg:col-span-4 glass-panel rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center p-0">
+<div class="stadium-gauge-bg w-full h-full p-8 flex flex-col items-center justify-center relative">
+<div class="absolute top-4 left-4 bg-primary/90 text-on-primary text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-tighter">Live Broadcast</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2 drop-shadow-lg">Fan Confidence</h3>
+<p class="text-on-surface/80 text-sm mb-8 font-medium">Aggregate trust in match predictions</p>
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- Gauge Background -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle cx="50" cy="50" fill="transparent" r="45" stroke="rgba(28, 43, 60, 0.8)" stroke-dasharray="283" stroke-dashoffset="70" stroke-linecap="round" stroke-width="10"></circle>
+<circle class="drop-shadow-[0_0_15px_rgba(255,219,60,0.8)]" cx="50" cy="50" fill="transparent" r="45" stroke="#ffdb3c" stroke-dasharray="283" stroke-dashoffset="140" stroke-linecap="round" stroke-width="10"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-data-value text-5xl text-secondary-container drop-shadow-md">72</span>
+<span class="font-data-label text-[10px] uppercase tracking-widest text-on-surface font-bold">Optimistic</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-3 w-full gap-2 px-4">
+<div class="bg-black/40 backdrop-blur-md p-3 rounded text-center border border-white/10">
+<p class="text-[10px] font-data-label uppercase text-on-surface/60">Low</p>
+<p class="text-sm font-bold">12%</p>
+</div>
+<div class="bg-secondary-container/20 backdrop-blur-md p-3 rounded text-center border border-secondary-container/40">
+<p class="text-[10px] font-data-label uppercase text-on-surface/60">Med</p>
+<p class="text-sm font-bold text-secondary-container">58%</p>
+</div>
+<div class="bg-black/40 backdrop-blur-md p-3 rounded text-center border border-white/10">
+<p class="text-[10px] font-data-label uppercase text-on-surface/60">High</p>
+<p class="text-sm font-bold">30%</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Most Predicted Team (Doughnut Chart) -->
+<div class="col-span-12 lg:col-span-4 glass-panel p-8 rounded-2xl corner-peek-12">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-6">Top Contenders</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="Brazil Flag" class="w-8 h-6 rounded shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9j-sRVXxt4fvATi2X9NQEcgplUBPnXebwLVu0pbprn42edXddmlCYdZmqMPdTdp3fI9KTi1EbgcOgffMgh0IEQwGdUwlVlXq1r66llTWInArxWbj0d9MQkfemqeTYAQa7h6-HwTMpqEOz4RtUhRan4Hd6tCzBHj2bCTn12Fde859r99t8sgnMZD9sBbo4c2od7GOA44icrErRdi6p2LD_6gNhaKjjGWPdTrfc5WiJTDcTcgVt2K4PJnHpXRT1V8nrtjsf96xMnC8"/>
+<div class="flex-1">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span>BRAZIL</span>
+<span>28.5%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary shadow-[0_0_8px_rgba(165,231,255,0.6)]" style="width: 28.5%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="France Flag" class="w-8 h-6 rounded shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjM9U5L9GOsEsMOoD9a-ySB6aiXzEZ83Rj_B1wZp6GWNzE3kQHGKtk5ubRHvyuUEd3O7HW_WZMaE8uBzxZapheJ-BVEd3TaljKT9QPnE5Pq4nWL5-CoQbtcYo6S3NmE62B29v2dRqnhBqV9IEN9p35eWJ45y5hK6b9Os3DRqKg297F_4O2-YIyqa22B7FB0q9f_GAQINBU9KlTNgMnOq-oY-o5mTrtWOUYGEr_u-blMqiXKBZxKmqOx0-w6R6sTIJBsv19Yiovvbw"/>
+<div class="flex-1">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span>FRANCE</span>
+<span>21.2%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary/70" style="width: 21.2%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Argentina Flag" class="w-8 h-6 rounded shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVM7bKCWLGdamS0P0EkptNu-VpQeA0iAHI5xOxcmIVFj1zOPuh1U8e32H_3YvsuLBdWm6lu2krYTq6ndODRMoaYeESXU7jo34m81iz53ic6bc6s2Sri39of8NtgWiM-3XOkz-2_wdF2wOpQXcTLXpdyS_VkLatWmvjrp2UbSPikdEQyCAsMfL0e_h4Ik1ohfeOFJeXT_wy99xczXklhTRBdyFLOCe0SX8RUU7tjRcMorjt8pBJpbrRwM_luqinfOXAwpV1u3mBAQ4"/>
+<div class="flex-1">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span>ARGENTINA</span>
+<span>18.4%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary/50" style="width: 18.4%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<img alt="Spain Flag" class="w-8 h-6 rounded shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgrfO73JFH0qKtohx7FeFX4gcQAhZR8hcoPtDyyqCZ1CFV5qxLfgZob6TJmkjDCw-PWdJBZrgfITBx4Uw7Y-ZVmRUuLKlOT_jS8J0RTteLd4vpagKA0HAAMFpoKVXi2Qdt4m328u-ApCS1QTY3lmd0yUI_nkXlmfKyNZja9OiwMOWtQE35R75GQ6Lc9F35iOJwGARKPYJGxeufptQgHfW6D_S8WkNoPQURXzjFVpVXE4u0sC7riHHsON-Lu4KbSyW8Lp_8yjQfl80"/>
+<div class="flex-1">
+<div class="flex justify-between text-xs font-bold mb-1">
+<span>SPAIN</span>
+<span>12.1%</span>
+</div>
+<div class="h-2 w-full bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary/30" style="width: 12.1%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Most Active Country (Bar Chart) -->
+<div class="col-span-12 lg:col-span-5 glass-panel p-8 rounded-2xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Participation by Region</h3>
+<p class="text-on-surface-variant text-sm mb-8">Highest volume of active predictors</p>
+<div class="h-48 w-full flex items-end justify-between gap-4">
+<div class="flex flex-col items-center flex-1 gap-3">
+<div class="w-full bg-white/10 rounded-t h-[90%] relative group">
+<div class="absolute inset-0 bg-primary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold">1.2M</div>
+</div>
+<span class="text-[10px] font-data-label uppercase">USA</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-3">
+<div class="w-full bg-white/10 rounded-t h-[75%] relative group">
+<div class="absolute inset-0 bg-primary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold">850K</div>
+</div>
+<span class="text-[10px] font-data-label uppercase">UK</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-3">
+<div class="w-full bg-white/10 rounded-t h-[60%] relative group">
+<div class="absolute inset-0 bg-primary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold">620K</div>
+</div>
+<span class="text-[10px] font-data-label uppercase">MEX</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-3">
+<div class="w-full bg-white/10 rounded-t h-[45%] relative group">
+<div class="absolute inset-0 bg-primary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold">410K</div>
+</div>
+<span class="text-[10px] font-data-label uppercase">IND</span>
+</div>
+<div class="flex flex-col items-center flex-1 gap-3">
+<div class="w-full bg-white/10 rounded-t h-[30%] relative group">
+<div class="absolute inset-0 bg-primary opacity-20 group-hover:opacity-40 transition-opacity"></div>
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold">300K</div>
+</div>
+<span class="text-[10px] font-data-label uppercase">GER</span>
+</div>
+</div>
+</div>
+<!-- Fan Sentiment Analysis -->
+<div class="col-span-12 lg:col-span-3 glass-panel p-8 rounded-2xl flex flex-col">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Social Sentiment</h3>
+<p class="text-on-surface-variant text-sm mb-6">Real-time fan emotion tracking</p>
+<div class="flex-1 flex flex-col justify-center gap-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-green-400" data-icon="sentiment_very_satisfied">sentiment_very_satisfied</span>
+<span class="text-sm font-bold uppercase tracking-wider">Hype</span>
+</div>
+<span class="font-data-label text-primary">High</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-400" data-icon="sentiment_neutral">sentiment_neutral</span>
+<span class="text-sm font-bold uppercase tracking-wider">Stability</span>
+</div>
+<span class="font-data-label text-primary">Normal</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-400" data-icon="sentiment_very_dissatisfied">sentiment_very_dissatisfied</span>
+<span class="text-sm font-bold uppercase tracking-wider">Anxiety</span>
+</div>
+<span class="font-data-label text-primary">Low</span>
+</div>
+</div>
+<div class="mt-6 pt-6 border-t border-white/10">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+<span class="text-[10px] font-data-label text-on-surface-variant uppercase">Analyzing live feed...</span>
+</div>
+<p class="text-[11px] leading-tight text-on-surface-variant italic">"Fans are extremely bullish on USA's young roster for the opening match."</p>
+</div>
+</div>
+</div>
+<!-- Call to Action / Footer Area -->
+<section class="mt-20 glass-panel p-12 rounded-3xl relative overflow-hidden text-center bg-gradient-to-br from-surface-container to-surface z-10">
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<img alt="" class="w-full h-full object-cover object-top scale-125 blur-sm opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi_gHXAhKmc3u3z_coBxkhQ1J-pSpCbt_p0Jc-O9Dy7PCT0aHAnPnnfC6VWPRE0V0ycGO5vuKlrPY1SRe959JbzzDw5ZeFCJ_XTr7gjJLD4hVFcuykJ6lKPsh1AYh_DJNZ35_5pLNW-z1eK_Kr18o5yyV5MZcg4Th2rNt0NnM1KlYRohWB_FqTd5CKOrIkixH-bstzkgrPE7IusbOaQgSLMEzx19XwcQ7BHkse9vsvfJrV4bFHxM_UM91AYfnIB_aktbQREehMvBY"/>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-xl text-headline-xl mb-4">Ready to test your instincts?</h2>
+<p class="text-on-surface-variant font-body-lg max-w-xl mx-auto mb-8">
+                    Join the global arena and start predicting today. The higher the risk, the greater the legendary status.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-10 py-4 bg-primary text-on-primary font-black rounded-full text-lg uppercase tracking-wider shadow-[0_0_20px_rgba(71,214,255,0.4)] hover:scale-105 transition-transform">
+                        Make Your Move
+                    </button>
+<button class="px-10 py-4 border-2 border-primary text-primary font-black rounded-full text-lg uppercase tracking-wider hover:bg-primary/10 transition-colors">
+                        View Rulebook
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-12 bg-surface-container-lowest/80 dark:bg-surface-container-lowest/80 backdrop-blur-md border-t border-white/5 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-margin-desktop max-w-container-max mx-auto">
+<div>
+<div class="font-headline-lg text-headline-lg text-primary mb-4">FIFA 2026 Arena</div>
+<p class="text-on-surface-variant font-body-md text-body-md opacity-80 max-w-sm">
+                    The ultimate destination for global football fans to compete, predict, and prove their mastery of the beautiful game.
+                </p>
+</div>
+<div class="flex flex-col md:items-end gap-6">
+<div class="flex flex-wrap gap-8 justify-start md:justify-end">
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Tournament Rules</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md opacity-80 hover:opacity-100" href="#">Contact Support</a>
+</div>
+<div class="text-on-surface-variant font-body-md text-body-md opacity-50">
+                    © 2026 FIFA World Cup Prediction Arena. All rights reserved.
+                </div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Update rank counter simulation
+        setInterval(() => {
+            const counters = document.querySelectorAll('.font-data-value');
+            counters.forEach(counter => {
+                if(Math.random() > 0.9) {
+                    const originalVal = counter.innerText;
+                    if(originalVal.includes('%')) {
+                        const val = parseFloat(originalVal);
+                        counter.innerText = (val + (Math.random() * 0.2 - 0.1)).toFixed(1) + '%';
+                    }
+                }
+            });
+        }, 5000);
+    </script>
+</body></html>

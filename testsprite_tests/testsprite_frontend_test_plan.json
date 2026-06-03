@@ -1,0 +1,336 @@
+[
+  {
+    "id": "TC001",
+    "title": "Submit a prediction and see it reflected on the dashboard",
+    "description": "This test verifies that a prediction user can complete the prediction form on the dashboard and see the saved prediction in the dashboard state.",
+    "category": "Predictions Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the prediction dashboard is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Fill in a valid prediction for a match"
+      },
+      {
+        "type": "action",
+        "description": "Submit the prediction form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the submitted prediction appears in the dashboard state"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Open the home page and reach the match schedule",
+    "description": "This test verifies that a visitor can load the home page, see the core landing content, and navigate to the match schedule from the main navigation.",
+    "category": "Home Page and Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the main hero and feature sections"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the landing page hero and key promotional sections are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link to view the match schedule"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the schedule page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "View the global rankings and points",
+    "description": "This verifies that a visitor can open the leaderboard and review ranked entries with points and standings.",
+    "category": "Global Leaderboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /leaderboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify leaderboard entries are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify points and ranking position are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Browse the match schedule and open a match",
+    "description": "This test verifies that a user can view the full schedule, open a match item, and see the match details needed to understand the fixture.",
+    "category": "Match Schedule",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /matches"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a list of FIFA World Cup 2026 matches is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Open a match item from the schedule"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the match detail view shows the teams, date, time, and venue"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Review the leaderboard and standings",
+    "description": "This test verifies that a rankings viewer can open the leaderboard and see the current rankings, points, and top entries.",
+    "category": "Leaderboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /leaderboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the rankings leaderboard is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user standing and top-ranked entries are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "See the current standing on the leaderboard",
+    "description": "This verifies that a user can find their own standing within the leaderboard list.",
+    "category": "Global Leaderboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /leaderboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the user's standing is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the top-ranked entries are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Open the leaderboard from home navigation",
+    "description": "This verifies that a visitor can reach the leaderboard through the app navigation from the home page.",
+    "category": "Global Leaderboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to view the leaderboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the leaderboard page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify leaderboard entries are displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "See the home page call-to-action placeholders",
+    "description": "This test verifies that a visitor can open the home page and use the placeholder login or join actions without leaving the marketing site.",
+    "category": "Home Page and Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the login placeholder action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the marketing site remains displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the join now placeholder action"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the marketing site remains displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC009",
+    "title": "View the home page ranking preview",
+    "description": "This test verifies that a visitor can see the top-ranked users preview on the home page as part of the landing experience.",
+    "category": "Home Page and Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the rankings preview section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the top three users preview is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC010",
+    "title": "Recover from an invalid route back to home",
+    "description": "This test verifies that a visitor landing on an unknown route sees a recovery state and can return to the home page using site navigation.",
+    "category": "Home Page and Navigation",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /unknown-route"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a 404 page is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the navigation link to return home"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the home page is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC011",
+    "title": "See validation feedback for an incomplete prediction",
+    "description": "This test verifies that the dashboard blocks an incomplete prediction submission and shows validation feedback to guide the user.",
+    "category": "Predictions Dashboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /dashboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the prediction dashboard is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Submit the prediction form without completing required fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify validation feedback is displayed"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC012",
+    "title": "See an empty or error state when rankings are unavailable",
+    "description": "This verifies that the leaderboard page shows a clear empty state or error message when ranking data does not render.",
+    "category": "Global Leaderboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /leaderboard"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state message is visible or a rankings error message is visible"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC013",
+    "title": "See the schedule empty state when matches are unavailable",
+    "description": "This test verifies that the schedule page presents a clear empty or error state when no match items can be shown to the user.",
+    "category": "Match Schedule",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /matches"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the schedule page content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an empty state or error state is displayed instead of match items"
+      }
+    ],
+    "priority": "Low"
+  },
+  {
+    "id": "TC014",
+    "title": "Recover to the home page from an invalid route",
+    "description": "This verifies that a visitor landing on an invalid path sees a 404 page and can navigate back to the home page.",
+    "category": "Global Leaderboard",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to a valid unknown route"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a 404 page is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Click the link to return to the home page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the home page is displayed"
+      }
+    ],
+    "priority": "Low"
+  }
+]

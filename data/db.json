@@ -1,0 +1,122 @@
+{
+  "users": [
+    {
+      "id": "u6jvpsbd",
+      "email": "devprasad6007@gmail.com",
+      "name": "ExWhyZed",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=ExWhyZed&backgroundColor=b6e3f4",
+      "points": 0,
+      "predictions": 1,
+      "votes": {
+        "M001": "home"
+      }
+    }
+  ],
+  "globalVotes": {
+    "u6jvpsbd": "pt"
+  },
+  "matches": [
+    {
+      "id": "M001",
+      "group": "Group A",
+      "stage": "Group Stage",
+      "match": 1,
+      "date": "Jun 11, 2026",
+      "time": "20:00 ET",
+      "home": "Mexico",
+      "homeCode": "mx",
+      "away": "South Africa",
+      "awayCode": "za",
+      "venue": "Estadio Azteca, Mexico City",
+      "homeWinVotes": 1,
+      "drawVotes": 0,
+      "awayVotes": 0,
+      "totalVotes": 1
+    },
+    {
+      "id": "M002",
+      "group": "Group B",
+      "stage": "Group Stage",
+      "match": 3,
+      "date": "Jun 12, 2026",
+      "time": "15:00 ET",
+      "home": "Canada",
+      "homeCode": "ca",
+      "away": "Bosnia",
+      "awayCode": "ba",
+      "venue": "BMO Field, Toronto",
+      "homeWinVotes": 0,
+      "drawVotes": 0,
+      "awayVotes": 0,
+      "totalVotes": 0
+    },
+    {
+      "id": "M003",
+      "group": "Group C",
+      "stage": "Group Stage",
+      "match": 7,
+      "date": "Jun 13, 2026",
+      "time": "18:00 ET",
+      "home": "Brazil",
+      "homeCode": "br",
+      "away": "Morocco",
+      "awayCode": "ma",
+      "venue": "BC Place, Vancouver",
+      "homeWinVotes": 0,
+      "drawVotes": 0,
+      "awayVotes": 0,
+      "totalVotes": 0
+    },
+    {
+      "id": "M004",
+      "group": "Group D",
+      "stage": "Group Stage",
+      "match": 11,
+      "date": "Jun 14, 2026",
+      "time": "12:00 ET",
+      "home": "United States",
+      "homeCode": "us",
+      "away": "Paraguay",
+      "awayCode": "py",
+      "venue": "SoFi Stadium, Los Angeles",
+      "homeWinVotes": 0,
+      "drawVotes": 0,
+      "awayVotes": 0,
+      "totalVotes": 0
+    },
+    {
+      "id": "M005",
+      "group": "Group E",
+      "stage": "Group Stage",
+      "match": 16,
+      "date": "Jun 15, 2026",
+      "time": "21:00 ET",
+      "home": "Germany",
+      "homeCode": "de",
+      "away": "Curaçao",
+      "awayCode": "cw",
+      "venue": "Levi's Stadium, San Francisco Bay Area",
+      "homeWinVotes": 0,
+      "drawVotes": 0,
+      "awayVotes": 0,
+      "totalVotes": 0
+    },
+    {
+      "id": "M006",
+      "group": "Group F",
+      "stage": "Group Stage",
+      "match": 21,
+      "date": "Jun 16, 2026",
+      "time": "15:00 ET",
+      "home": "Netherlands",
+      "homeCode": "nl",
+      "away": "Japan",
+      "awayCode": "jp",
+      "venue": "AT&T Stadium, Dallas",
+      "homeWinVotes": 0,
+      "drawVotes": 0,
+      "awayVotes": 0,
+      "totalVotes": 0
+    }
+  ]
+}

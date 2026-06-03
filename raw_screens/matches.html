@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FIFA 2026 Arena - Match Schedule &amp; Predictions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#725f00",
+                      "inverse-surface": "#d4e4fa",
+                      "surface-container": "#122131",
+                      "surface-variant": "#273647",
+                      "primary-container": "#00d2ff",
+                      "primary-fixed": "#b6ebff",
+                      "on-secondary": "#3a3000",
+                      "tertiary-fixed": "#d7e3f6",
+                      "inverse-primary": "#00677f",
+                      "surface-container-low": "#0d1c2d",
+                      "surface": "#051424",
+                      "on-tertiary": "#26313f",
+                      "on-error-container": "#ffdad6",
+                      "error-container": "#93000a",
+                      "surface-tint": "#47d6ff",
+                      "outline-variant": "#3c494e",
+                      "error": "#ffb4ab",
+                      "on-surface": "#d4e4fa",
+                      "surface-container-lowest": "#010f1f",
+                      "surface-container-high": "#1c2b3c",
+                      "on-tertiary-fixed-variant": "#3c4857",
+                      "primary": "#a5e7ff",
+                      "secondary": "#fff9ef",
+                      "surface-container-highest": "#273647",
+                      "on-primary-fixed": "#001f28",
+                      "tertiary": "#d2def1",
+                      "surface-dim": "#051424",
+                      "secondary-container": "#ffdb3c",
+                      "surface-bright": "#2c3a4c",
+                      "secondary-fixed-dim": "#e9c400",
+                      "outline": "#859399",
+                      "on-tertiary-fixed": "#111c2a",
+                      "inverse-on-surface": "#233143",
+                      "tertiary-fixed-dim": "#bbc7da",
+                      "on-error": "#690005",
+                      "tertiary-container": "#b6c2d4",
+                      "primary-fixed-dim": "#47d6ff",
+                      "secondary-fixed": "#ffe16d",
+                      "on-background": "#d4e4fa",
+                      "on-secondary-fixed": "#221b00",
+                      "on-primary": "#003543",
+                      "on-primary-fixed-variant": "#004e60",
+                      "on-primary-container": "#00566a",
+                      "on-secondary-fixed-variant": "#544600",
+                      "on-surface-variant": "#bbc9cf",
+                      "on-tertiary-container": "#44505f",
+                      "background": "#051424"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "margin-mobile": "20px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "data-label": ["JetBrains Mono"],
+                      "data-value": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "display-lg-mobile": ["Montserrat"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-xl": ["Montserrat"],
+                      "display-lg": ["Montserrat"]
+              },
+              "fontSize": {
+                      "data-label": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "data-value": ["20px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                      "headline-lg": ["28px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-xl": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #051424;
+            color: #d4e4fa;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(18, 33, 49, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: #47d6ff;
+            box-shadow: 0 0 20px rgba(71, 214, 255, 0.2);
+            transform: translateY(-4px);
+        }
+        .neon-glow-primary {
+            box-shadow: 0 0 15px rgba(71, 214, 255, 0.4);
+        }
+        .pulse-live {
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scroll-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/10 shadow-[0_0_20px_rgba(71,214,255,0.15)]">
+<nav class="flex justify-between items-center h-20 px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-black text-primary tracking-tighter cursor-pointer active:scale-95 transition-transform">
+                FIFA 2026 Arena
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">Schedule</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Predictions</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Teams</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Stadiums</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Leaderboard</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2 font-body-md text-body-md text-primary border border-primary/30 rounded-full hover:bg-primary/10 transition-all">Login</button>
+<button class="px-6 py-2 font-body-md text-body-md bg-primary text-on-primary rounded-full neon-glow-primary hover:scale-105 transition-all">Join Now</button>
+</div>
+</nav>
+</header>
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden lg:flex flex-col py-8 gap-4 h-full w-72 fixed left-0 top-0 z-40 bg-surface-container-low/90 backdrop-blur-2xl border-r border-white/10 shadow-2xl mt-20">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center overflow-hidden border border-primary/40">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3C5biVjXCJXc2O7-urnI-v7ZP0-lTE44Lo77o8Hr_NpQmn4bhvk1GdPqzkkgfhyN9c9xVsU8JgLWSKJfX3GNO9BbaMGuSAtIEb0QcRxDBAIZUwsiwlI5iCYAPLleSMg1Yl0xl3v3-RTTzcGZ75jB5lx9kI6s-5fKeoC3FzEYwqqimalQqtEr9OW5E3eXpvO_Lm3lk9o0zz6gCb8q1ZsfapuemlO0TZhQiGL_WdKGBy5U0KrTHMefz9dfCJhaKEEnAF1DY_KfOv_U"/>
+</div>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Predictor Pro</p>
+<p class="font-data-label text-[10px] text-primary uppercase tracking-widest">Global Rank: #420</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-primary/5 hover:text-on-surface hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Home</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 bg-primary/10 text-primary border-r-4 border-primary transition-all" href="#">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Schedule</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-primary/5 hover:text-on-surface hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Predictions</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-primary/5 hover:text-on-surface hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Teams</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-3 text-on-surface-variant hover:bg-primary/5 hover:text-on-surface hover:translate-x-1 transition-all" href="#">
+<span class="material-symbols-outlined">stadium</span>
+<span class="font-data-label text-data-label uppercase tracking-widest">Stadiums</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl flex items-center justify-center gap-2 neon-glow-primary hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+                Place Prediction
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-72 pt-28 pb-12 px-margin-mobile md:px-margin-desktop min-h-screen relative">
+<!-- Background Atmosphere -->
+
+<div class="max-w-container-max mx-auto">
+<!-- Page Header -->
+<section class="mb-12">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">Match Schedule</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Analyze the upcoming clashes and stake your claim in the global arena. Predict winners, track live community sentiment, and climb the leaderboard.</p>
+</section>
+<!-- Stage Filter Tabs -->
+<div class="flex gap-4 mb-8 overflow-x-auto scroll-hide pb-2">
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary font-bold whitespace-nowrap">Group Stage</button>
+<button class="px-8 py-3 rounded-full bg-surface-variant/50 text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all whitespace-nowrap">Round of 32</button>
+<button class="px-8 py-3 rounded-full bg-surface-variant/50 text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all whitespace-nowrap">Round of 16</button>
+<button class="px-8 py-3 rounded-full bg-surface-variant/50 text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all whitespace-nowrap">Quarter-Finals</button>
+<button class="px-8 py-3 rounded-full bg-surface-variant/50 text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all whitespace-nowrap">Semi-Finals</button>
+<button class="px-8 py-3 rounded-full bg-surface-variant/50 text-on-surface-variant border border-white/10 hover:border-primary/50 transition-all whitespace-nowrap">Final</button>
+</div>
+<!-- Match Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-gutter">
+<!-- Match Card 1 -->
+<article class="glass-card p-6 rounded-2xl flex flex-col h-full group">
+<!-- Card Header: Metadata -->
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-data-label text-[12px] text-primary uppercase tracking-tighter mb-1">Group A • Match 1</span>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-md text-[14px]">June 11, 2026 • 20:00 EST</span>
+</div>
+</div>
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full font-data-label text-[12px] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary pulse-live"></span>
+                            PRE-MATCH
+                        </div>
+</div>
+<!-- Teams Row -->
+<div class="flex items-center justify-between mb-8">
+<!-- Team A -->
+<div class="flex flex-col items-center gap-3 w-1/3">
+<div class="w-20 h-20 rounded-full border-4 border-white/10 bg-surface-container-high flex items-center justify-center overflow-hidden shadow-xl group-hover:border-primary/40 transition-all">
+<img alt="USA Flag" class="w-12 h-12 object-contain" data-alt="The United States national flag, featuring crisp stars and stripes in a high-fidelity sports broadcast style. The colors are vibrant and saturated against a clean studio background, symbolizing the pride and scale of the 2026 World Cup host nation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP_9SPybpnA3aq_XLfzFjoPKzlFrCm9oeqmYQkE9cL7OFYaMKGnSvI4ZC-qAKh39f_P1ijeoTGrn6-cJe7kf9uidSwJkFfgAn5_L5AcrglqhyAqRh1PKXwmepPtKew-GwdVsDtjG7KV5iUnz79hkzv7Y3E-dNJ3Et-5P3e2alz8gGhJpQuDpKoXceneDWZPVtjldJFLsuNYlqwfLpGo5U7qsGtsDnGBpVCimhynT_x6CbY1ptxVQqV8kWG4aGQxHBHLAB2Vfr5PQ8"/>
+</div>
+<span class="font-headline-lg text-[18px] text-center">USA</span>
+</div>
+<!-- VS -->
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-[24px] font-black text-white/20 italic">VS</span>
+<div class="mt-2 text-center">
+<p class="font-data-label text-[12px] text-on-surface-variant">KICKOFF IN</p>
+<p class="font-data-label text-[16px] text-primary countdown" data-time="2026-06-11T20:00:00">02d 14h 22m</p>
+</div>
+</div>
+<!-- Team B -->
+<div class="flex flex-col items-center gap-3 w-1/3">
+<div class="w-20 h-20 rounded-full border-4 border-white/10 bg-surface-container-high flex items-center justify-center overflow-hidden shadow-xl group-hover:border-primary/40 transition-all">
+<img alt="Mexico Flag" class="w-12 h-12 object-contain" data-alt="The Mexican national flag with its iconic green, white, and red vertical stripes and central eagle emblem. Rendered in a sleek, digital sports aesthetic with high-key lighting, capturing the energy and competitive spirit of the North American rivalry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZJaULwTtIlYISjznGy7CrDXMEfNPWEg1aYnCoUfzMZSdI6koi6JBK_oqH665zltA42965veaDpWrH99KCFC_79EUtVNzQw6B82iOM9M5-JD0IRM1GQb_2sQlYf8xyqVvhtpXAfX8G7XSD7P0dlxQ9yVqwECeU5oFaOUsZmkW0PShcMXFQeCLVEBR1O2Nc-hN0KOnMPTJtDqLgXCxD29_YdtO3YWSwRZNG321Yh_JLT87Io9Wpx2qKyNVaE3pmTEnjYqXhQ0gS5Wc"/>
+</div>
+<span class="font-headline-lg text-[18px] text-center">MEXICO</span>
+</div>
+</div>
+<!-- Location -->
+<div class="flex items-center justify-center gap-2 mb-8 text-on-surface-variant/80 border-t border-white/5 pt-4">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-[14px]">MetLife Stadium, NY/NJ</span>
+</div>
+<!-- Prediction Actions -->
+<div class="space-y-6 mt-auto">
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">USA WIN</button>
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">DRAW</button>
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">MEX WIN</button>
+</div>
+<!-- Live Prediction Bar -->
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-data-label uppercase tracking-widest text-on-surface-variant">
+<span>Community Sentiment</span>
+<span class="text-primary">12.4k Votes</span>
+</div>
+<div class="h-3 w-full bg-white/5 rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 52%" title="USA: 52%"></div>
+<div class="h-full bg-white/20" style="width: 18%" title="Draw: 18%"></div>
+<div class="h-full bg-secondary-container" style="width: 30%" title="Mexico: 30%"></div>
+</div>
+<div class="flex justify-between text-[11px] font-data-label text-on-surface-variant/60">
+<span>USA 52%</span>
+<span>18%</span>
+<span>MEX 30%</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Match Card 2 -->
+<article class="glass-card p-6 rounded-2xl flex flex-col h-full group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-data-label text-[12px] text-primary uppercase tracking-tighter mb-1">Group B • Match 2</span>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-md text-[14px]">June 12, 2026 • 15:00 EST</span>
+</div>
+</div>
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full font-data-label text-[12px] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary pulse-live"></span>
+                            PRE-MATCH
+                        </div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex flex-col items-center gap-3 w-1/3">
+<div class="w-20 h-20 rounded-full border-4 border-white/10 bg-surface-container-high flex items-center justify-center overflow-hidden shadow-xl group-hover:border-primary/40 transition-all">
+<img alt="Argentina Flag" class="w-12 h-12 object-contain" data-alt="The Argentinian sun and blue stripes flag presented in a cinematic, low-angle studio shot. The texture is high-definition fabric, reflecting a futuristic sports arena's atmospheric neon blue lighting and dark moody background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ZGKMEt3l-HwZQZrMk3It_AJu_GHEUarBayhvfT6nnBMSLets14txLn6mVMAbUJwaCRaUYDx8-GH0VgO1NH5E-O7uWHj4zaNnK0gktthtqCTF53L9oSP3_cGAXIgYiCHEVtgBjXzZaW5YCBDbtQTYNbnmOBz043r1y0-tXuAN4dKj2uiVP8GMdmT1S_jF1RlovSHei3rhDsDoQAYSwIKMt7Up7YsY-sH8VqO5iWDtnbu08VP3N2psToB2LD75i5FIftAMfaZ7zTg"/>
+</div>
+<span class="font-headline-lg text-[18px] text-center">ARGENTINA</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-[24px] font-black text-white/20 italic">VS</span>
+<div class="mt-2 text-center">
+<p class="font-data-label text-[12px] text-on-surface-variant">KICKOFF IN</p>
+<p class="font-data-label text-[16px] text-primary countdown">03d 08h 15m</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 w-1/3">
+<div class="w-20 h-20 rounded-full border-4 border-white/10 bg-surface-container-high flex items-center justify-center overflow-hidden shadow-xl group-hover:border-primary/40 transition-all">
+<img alt="France Flag" class="w-12 h-12 object-contain" data-alt="The French tricolor flag in a sophisticated digital broadcast style. The red, white, and blue colors are rich and vibrant, set against a dark, tech-infused stadium backdrop with subtle lens flares and a sense of championship tension." src="https://lh3.googleusercontent.com/aida-public/AB6AXuATh48UWxWyH5fX-EcZc6dCvJrGslMYCkCm_wgobEvfFVayafeHESlFEIfiwHmKXd8AC06LIOJUH_fn80ur3yvV7qhb3K4kbV4UAfVWhvqKJPZvYLKQvS9sYOcoLPO3hAT5XuU_mPbbxhCa34TQKf5bxkExY8qYDI5E2Vp5eM7EeNKmDKv3esiBjKJYWwiLmlViUFHUoc3zxXUyOnfw90r4czVLCfTxK0rxd_qmMg0c55-kGspADLZqvKwQX8kMKFps4S8KLRR_ZvI"/>
+</div>
+<span class="font-headline-lg text-[18px] text-center">FRANCE</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 mb-8 text-on-surface-variant/80 border-t border-white/5 pt-4">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-[14px]">SoFi Stadium, Los Angeles</span>
+</div>
+<div class="space-y-6 mt-auto">
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">ARG WIN</button>
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">DRAW</button>
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">FRA WIN</button>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-data-label uppercase tracking-widest text-on-surface-variant">
+<span>Community Sentiment</span>
+<span class="text-primary">45.8k Votes</span>
+</div>
+<div class="h-3 w-full bg-white/5 rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 45%" title="ARG: 45%"></div>
+<div class="h-full bg-white/20" style="width: 15%" title="Draw: 15%"></div>
+<div class="h-full bg-secondary-container" style="width: 40%" title="FRA: 40%"></div>
+</div>
+<div class="flex justify-between text-[11px] font-data-label text-on-surface-variant/60">
+<span>ARG 45%</span>
+<span>15%</span>
+<span>FRA 40%</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Match Card 3 -->
+<article class="glass-card p-6 rounded-2xl flex flex-col h-full group">
+<div class="flex justify-between items-start mb-6">
+<div class="flex flex-col">
+<span class="font-data-label text-[12px] text-primary uppercase tracking-tighter mb-1">Group C • Match 3</span>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+<span class="font-body-md text-[14px]">June 13, 2026 • 18:00 EST</span>
+</div>
+</div>
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full font-data-label text-[12px] flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary pulse-live"></span>
+                            PRE-MATCH
+                        </div>
+</div>
+<div class="flex items-center justify-between mb-8">
+<div class="flex flex-col items-center gap-3 w-1/3">
+<div class="w-20 h-20 rounded-full border-4 border-white/10 bg-surface-container-high flex items-center justify-center overflow-hidden shadow-xl group-hover:border-primary/40 transition-all">
+<img alt="Brazil Flag" class="w-12 h-12 object-contain" data-alt="The Brazilian flag featuring the iconic green field with a yellow rhombus and blue globe. Rendered in a high-gloss, premium finish that catches the neon stadium lighting, representing the flair and historical dominance of Brazil in global soccer." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqJxKyzgVMu4TuN27hqTBKzHIQhiWq6ohMwqh8fKkNvK0EiKIlUjZNXoWnI_qY-XXpIN7pKqcBFF8WYhjYLKnsQLo8kPn5pCpaxWGIG2uh5BNwA1Otkdhx6MCRPpfyfa591rql02hCqmj4htFNGfQEGj2PVmPzzaRu2xhn0nljw2kpPVgyQdhSsXqwl7ERn6b0lLYhEihVLfvj69XsZukEsJHDFjmkV30pJ-pf3hKjITmGa_5s1c4miR0HBavCajpY2zdiDuW6yw4"/>
+</div>
+<span class="font-headline-lg text-[18px] text-center">BRAZIL</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-[24px] font-black text-white/20 italic">VS</span>
+<div class="mt-2 text-center">
+<p class="font-data-label text-[12px] text-on-surface-variant">KICKOFF IN</p>
+<p class="font-data-label text-[16px] text-primary countdown">04d 11h 02m</p>
+</div>
+</div>
+<div class="flex flex-col items-center gap-3 w-1/3">
+<div class="w-20 h-20 rounded-full border-4 border-white/10 bg-surface-container-high flex items-center justify-center overflow-hidden shadow-xl group-hover:border-primary/40 transition-all">
+<img alt="Germany Flag" class="w-12 h-12 object-contain" data-alt="The German national flag with bold black, red, and gold stripes. Presented in a modern, clinical sports HUD style with sharp focus and cinematic lighting that emphasizes the engineering precision and strength of the national team." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCURajUmfuYjDQ_3rUSBCkzzfDsi2oLL_sNP_9mgVvdIlTGN5pBNGDOnK1IupuCclQhRTnWcV-tqjJ4R5lK3zO9uBCCHGiPF-skTZY4U-rcTu_Nry3Q7W6BnxqS0tPKpc_1uueU4atydDAsqledlSelaJKpM93BEDqGTT48PPi_85iJjoMuGO5Pp9-dTnDroR_08qLZNmfp-MIE5oPXEsALRr0g83enegQC46c6yBXEoBo9SS5WFSQjwZFgoqxOSjw7tuMqk8H3uUg"/>
+</div>
+<span class="font-headline-lg text-[18px] text-center">GERMANY</span>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 mb-8 text-on-surface-variant/80 border-t border-white/5 pt-4">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="font-body-md text-[14px]">BC Place, Vancouver</span>
+</div>
+<div class="space-y-6 mt-auto">
+<div class="flex gap-2">
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">BRA WIN</button>
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">DRAW</button>
+<button class="flex-1 py-3 bg-surface-variant/30 border border-white/10 rounded-xl font-data-label text-[12px] hover:border-primary hover:text-primary hover:bg-primary/5 transition-all">GER WIN</button>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[11px] font-data-label uppercase tracking-widest text-on-surface-variant">
+<span>Community Sentiment</span>
+<span class="text-primary">28.1k Votes</span>
+</div>
+<div class="h-3 w-full bg-white/5 rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 62%" title="BRA: 62%"></div>
+<div class="h-full bg-white/20" style="width: 10%" title="Draw: 10%"></div>
+<div class="h-full bg-secondary-container" style="width: 28%" title="GER: 28%"></div>
+</div>
+<div class="flex justify-between text-[11px] font-data-label text-on-surface-variant/60">
+<span>BRA 62%</span>
+<span>10%</span>
+<span>GER 28%</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Bento Features Section -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-card p-8 rounded-3xl relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline-xl text-headline-xl mb-4">Prime Predictor Perks</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mb-8">Join the elite circle of football analysts. Earn exclusive NFTs, stadium access, and digital currency for accurate predictions throughout the tournament.</p>
+<button class="px-10 py-4 bg-primary text-on-primary font-bold rounded-full neon-glow-primary hover:scale-105 transition-transform">Unlock Premium Access</button>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[320px]">stars</span>
+</div>
+</div>
+<div class="glass-card p-8 rounded-3xl flex flex-col items-center justify-center text-center gap-4">
+<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary-container mb-2">
+<span class="material-symbols-outlined text-4xl">trophy</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg">Arena Jackpots</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Participate in the Group Stage Mega Pool. Total Prize: $2.5M USD.</p>
+<a class="text-primary font-bold hover:underline" href="#">View Rules →</a>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest py-12 border-t border-white/5 mt-20 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="font-headline-lg text-headline-lg text-primary font-black tracking-tighter">FIFA 2026 Arena</div>
+<p class="text-on-surface-variant max-w-sm font-body-md text-body-md">
+                    The ultimate destination for global football enthusiasts to predict, compete, and celebrate the beautiful game.
+                </p>
+<div class="flex gap-4 mt-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">social_leaderboard</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-4">
+<h5 class="font-data-label text-data-label uppercase tracking-widest text-on-surface">Information</h5>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-data-label text-data-label uppercase tracking-widest text-on-surface">Community</h5>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Tournament Rules</a>
+<a class="text-on-surface-variant hover:text-primary underline transition-all font-body-md text-body-md" href="#">Contact Support</a>
+</div>
+</div>
+</div>
+<div class="px-margin-desktop max-w-container-max mx-auto mt-12 pt-8 border-t border-white/5 text-center text-on-surface-variant opacity-60 font-body-md text-body-md">
+            © 2026 FIFA World Cup Prediction Arena. All rights reserved.
+        </div>
+</footer>
+<!-- Mobile Stadium HUD (Bottom Nav) -->
+<div class="lg:hidden fixed bottom-0 w-full z-50 bg-surface/80 backdrop-blur-2xl border-t border-white/10 px-4 py-3 flex justify-around items-center">
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-data-label uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="text-[10px] font-data-label uppercase">Schedule</span>
+</button>
+<div class="relative -top-6">
+<button class="w-14 h-14 rounded-full bg-primary text-on-primary shadow-[0_0_20px_#47d6ff] flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-data-label uppercase">Rank</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-data-label uppercase">Profile</span>
+</button>
+</div>
+<script>
+        // Simple micro-interaction for prediction buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.innerText.includes('WIN') || this.innerText === 'DRAW') {
+                    const parent = this.parentElement;
+                    parent.querySelectorAll('button').forEach(btn => {
+                        btn.classList.remove('bg-primary/20', 'border-primary', 'text-primary');
+                        btn.classList.add('bg-surface-variant/30', 'border-white/10', 'text-on-surface-variant');
+                    });
+                    this.classList.remove('bg-surface-variant/30', 'border-white/10', 'text-on-surface-variant');
+                    this.classList.add('bg-primary/20', 'border-primary', 'text-primary');
+                }
+            });
+        });
+
+        // Mock Countdown Logic
+        function updateCountdowns() {
+            const now = new Date().getTime();
+            document.querySelectorAll('.countdown').forEach(el => {
+                // For demo, we just cycle small random changes or use the attribute if it exists
+                // In production, parse data-time
+                const targetStr = el.getAttribute('data-time') || "2026-06-11T20:00:00";
+                const target = new Date(targetStr).getTime();
+                const diff = target - now;
+
+                if (diff > 0) {
+                    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    el.innerText = `${d}d ${h}h ${m}m`;
+                }
+            });
+        }
+        setInterval(updateCountdowns, 60000);
+        updateCountdowns();
+    </script>
+</body></html>

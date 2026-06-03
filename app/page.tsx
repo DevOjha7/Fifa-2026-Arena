@@ -45,7 +45,7 @@ export default function Home() {
     sentimentPct = { home: (featuredMatch.homeWinVotes / featuredMatch.totalVotes) * 100, draw: (featuredMatch.drawVotes / featuredMatch.totalVotes) * 100, away: (featuredMatch.awayVotes / featuredMatch.totalVotes) * 100 };
   }
 
-  const getFlag = (teamName) => {
+  const getFlag = (teamName: string) => {
     const team = allTeams.find(t => t.name === teamName);
     return team ? `https://flagcdn.com/w80/${team.code}.png` : '';
   };
@@ -64,7 +64,7 @@ export default function Home() {
             src="/fifa_world_cup_bg_4k.jpg"
             alt="FIFA 2026 World Cup Teams"
             className="w-full h-full object-cover"
-            style={{ objectPosition: "center top", imageRendering: "high-quality" }}
+            style={{ objectPosition: "center top" }}
           />
           {/* Gradient overlays */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(2,8,40,0.92) 0%, rgba(2,8,40,0.6) 40%, rgba(2,8,40,0.0) 60%, transparent 100%)" }} />
@@ -366,14 +366,14 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
+            {([
               { icon: "query_stats", title: "AI Predictions", desc: "Machine-learning models analyze form and odds to give you the winning edge.", color: "#38bdf8", img: "/football_action.png" },
               { icon: "leaderboard", title: "Global Rankings", desc: "Compete with 1.2M+ fans worldwide. Rise through legendary tiers.", color: "#f59e0b", img: "/global_rankings.jpg" },
               { icon: "stadium", title: "Stadium HUD", desc: "Real-time venue overlays, fan-zone maps, and location bonuses.", color: "#a78bfa", img: "/stadium_blue.jpg" },
               { icon: "emoji_events", title: "Prize Rewards", desc: "Win exclusive merchandise, tickets, and $500K in cash prizes.", color: "#f59e0b", img: "/prize_rewards_miami.jpg" },
               { icon: "groups", title: "Friend Leagues", desc: "Create private leagues. Settle the debate of who's the football expert.", color: "#38bdf8", img: "/spain_team.jpg", pos: "center 25%" },
               { icon: "notifications_active", title: "Match Alerts", desc: "Instant push notifications for line-ups, odds, and match reminders.", color: "#f43f5e", img: "/football_fans.png" },
-            ].map((f) => (
+            ] as { icon: string; title: string; desc: string; color: string; img: string; pos?: string; customScale?: number; fit?: string }[]).map((f) => (
               <a href="/dashboard" key={f.title} className="group rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] block"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
                 {/* Feature card background image */}

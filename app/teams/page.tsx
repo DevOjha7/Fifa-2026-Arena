@@ -42,23 +42,23 @@ const allTeams = [
   { name: "New Zealand",  code: "nz", group: "G", rank: 104,manager: "Darren Bazeley",    conf: "OFC",      stars: 0, accent: "#000000", titles: "OFC Nations Cup" },
   /* ── GROUP H ── */
   { name: "Spain",        code: "es", group: "H", rank: 8,  manager: "Luis de la Fuente", conf: "UEFA",     stars: 1, accent: "#dc2626", titles: "1× World Champion" },
-  { name: "Cabo Verde",   code: "cv", group: "H", rank: 65, manager: "Bubista",           conf: "CAF",      stars: 0, accent: "#0ea5e9", titles: "Historic Debut" },
+  { name: "Cabo Verde",   code: "cv", group: "H", rank: 65, manager: "Bubista",           conf: "CAF",      stars: 0, accent: "#C8102E", titles: "Historic Debut" },
   { name: "Saudi Arabia", code: "sa", group: "H", rank: 53, manager: "Roberto Mancini",   conf: "AFC",      stars: 0, accent: "#16a34a", titles: "2022 Upset Kings" },
-  { name: "Uruguay",      code: "uy", group: "H", rank: 15, manager: "Marcelo Bielsa",    conf: "CONMEBOL", stars: 2, accent: "#0ea5e9", titles: "2× World Champion" },
+  { name: "Uruguay",      code: "uy", group: "H", rank: 15, manager: "Marcelo Bielsa",    conf: "CONMEBOL", stars: 2, accent: "#C8102E", titles: "2× World Champion" },
   /* ── GROUP I ── */
   { name: "France",       code: "fr", group: "I", rank: 2,  manager: "Didier Deschamps",  conf: "UEFA",     stars: 2, accent: "#2563eb", titles: "2× World Champion" },
   { name: "Senegal",      code: "sn", group: "I", rank: 17, manager: "Aliou Cissé",       conf: "CAF",      stars: 0, accent: "#16a34a", titles: "AFCON 2022 Champ." },
   { name: "Iraq",         code: "iq", group: "I", rank: 58, manager: "Jesús Casas",       conf: "AFC",      stars: 0, accent: "#16a34a", titles: "1986 WC App." },
   { name: "Norway",       code: "no", group: "I", rank: 47, manager: "Ståle Solbakken",   conf: "UEFA",     stars: 0, accent: "#dc2626", titles: "1998 R16 (WC)" },
   /* ── GROUP J ── */
-  { name: "Argentina",    code: "ar", group: "J", rank: 1,  manager: "Lionel Scaloni",    conf: "CONMEBOL", stars: 3, accent: "#38bdf8", titles: "3× World Champion" },
+  { name: "Argentina",    code: "ar", group: "J", rank: 1,  manager: "Lionel Scaloni",    conf: "CONMEBOL", stars: 3, accent: "#C9A84C", titles: "3× World Champion" },
   { name: "Algeria",      code: "dz", group: "J", rank: 43, manager: "Vladimir Petković", conf: "CAF",      stars: 0, accent: "#16a34a", titles: "2014 R16 (WC)" },
   { name: "Austria",      code: "at", group: "J", rank: 25, manager: "Ralf Rangnick",     conf: "UEFA",     stars: 0, accent: "#dc2626", titles: "1954 3rd Place" },
   { name: "Jordan",       code: "jo", group: "J", rank: 71, manager: "Hussein Ammouta",   conf: "AFC",      stars: 0, accent: "#dc2626", titles: "1st WC Appearance" },
   /* ── GROUP K ── */
   { name: "Portugal",     code: "pt", group: "K", rank: 6,  manager: "Roberto Martínez",  conf: "UEFA",     stars: 0, accent: "#b91c1c", titles: "Euro 2016 Champ." },
-  { name: "DR Congo",     code: "cd", group: "K", rank: 63, manager: "Sébastien Desabre", conf: "CAF",      stars: 0, accent: "#0ea5e9", titles: "1974 WC App." },
-  { name: "Uzbekistan",   code: "uz", group: "K", rank: 64, manager: "Srečko Katanec",    conf: "AFC",      stars: 0, accent: "#0ea5e9", titles: "Historic Debut" },
+  { name: "DR Congo",     code: "cd", group: "K", rank: 63, manager: "Sébastien Desabre", conf: "CAF",      stars: 0, accent: "#C8102E", titles: "1974 WC App." },
+  { name: "Uzbekistan",   code: "uz", group: "K", rank: 64, manager: "Srečko Katanec",    conf: "AFC",      stars: 0, accent: "#C8102E", titles: "Historic Debut" },
   { name: "Colombia",     code: "co", group: "K", rank: 12, manager: "Néstor Lorenzo",    conf: "CONMEBOL", stars: 0, accent: "#ca8a04", titles: "2014 QF (WC)" },
   /* ── GROUP L ── */
   { name: "England",      code: "gb-eng", group: "L", rank: 4,  manager: "Gareth Southgate",conf: "UEFA",     stars: 1, accent: "#dc2626", titles: "1× World Champion" },
@@ -85,7 +85,7 @@ export default function Teams() {
         <img src="/mascot3.jpg" alt="Mascot" className="w-full h-auto rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] border-4 border-white/20" style={{ transform: "rotate(-4deg)" }} />
       </div>
       <div className="fixed inset-0 z-[-2] bg-cover" style={{ backgroundImage: "url('/bg-teams.jpg')", backgroundPosition: "center 20%" }}></div>
-      <div className="fixed inset-0 z-[-1] bg-[#0f172a]/80 backdrop-blur-[2px]"></div>
+      <div className="fixed inset-0 z-[-1] bg-[#0D1042]/80 backdrop-blur-[2px]"></div>
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 py-12">
 
         {/* Header */}
@@ -97,27 +97,27 @@ export default function Teams() {
           <h1 className="font-display-lg text-display-lg-mobile md:text-[52px] tracking-tight mb-4" style={{ color: "#f8fafc" }}>
             World Cup <span className="gradient-text-primary">Teams</span>
           </h1>
-          <p className="font-body-lg" style={{ color: "#475569", maxWidth: "520px" }}>
+          <p className="font-body-lg" style={{ color: "#B8BDD9", maxWidth: "520px" }}>
             All 48 qualified nations competing for glory across USA, Canada &amp; Mexico.
-            {activeConf !== "All" && <span style={{ color: "#0ea5e9", fontWeight: 600 }}> Showing {filtered.length} {activeConf} teams.</span>}
+            {activeConf !== "All" && <span style={{ color: "#C8102E", fontWeight: 600 }}> Showing {filtered.length} {activeConf} teams.</span>}
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {[
-            { label: "Total Teams", value: "48", icon: "groups", color: "#0ea5e9" },
+            { label: "Total Teams", value: "48", icon: "groups", color: "#C8102E" },
             { label: "Confederations", value: "6", icon: "public", color: "#f59e0b" },
-            { label: "Host Countries", value: "3", icon: "location_on", color: "#0ea5e9" },
+            { label: "Host Countries", value: "3", icon: "location_on", color: "#C8102E" },
             { label: "Total Matches", value: "104", icon: "sports_soccer", color: "#f59e0b" },
           ].map((s) => (
             <div key={s.label} className="stat-card flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: s.color === "#0ea5e9" ? "#e0f2fe" : "#fef3c7" }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: s.color === "#C8102E" ? "rgba(201,168,76,0.1)" : "#fef3c7" }}>
                 <span className="material-symbols-outlined text-xl" style={{ color: s.color, fontVariationSettings: "'FILL' 1" }}>{s.icon}</span>
               </div>
               <div>
                 <p style={{ fontFamily: "Outfit", fontSize: "26px", fontWeight: 800, color: "#f8fafc", lineHeight: 1.1 }}>{s.value}</p>
-                <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#94a3b8", marginTop: "3px" }}>{s.label}</p>
+                <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#B8BDD9", marginTop: "3px" }}>{s.label}</p>
               </div>
             </div>
           ))}
@@ -134,10 +134,10 @@ export default function Teams() {
                 className="px-5 py-2 rounded-full text-[12px] font-bold uppercase tracking-wider transition-all duration-200"
                 style={{
                   fontFamily: "JetBrains Mono, monospace",
-                  background: isActive ? "#0ea5e9" : "#ffffff",
-                  color: isActive ? "#ffffff" : "#475569",
+                  background: isActive ? "#C8102E" : "#ffffff",
+                  color: isActive ? "#ffffff" : "#B8BDD9",
                   border: isActive ? "none" : "1px solid #e2e8f0",
-                  boxShadow: isActive ? "0 4px 12px rgba(14,165,233,0.3)" : "0 1px 2px rgba(0,0,0,0.04)",
+                  boxShadow: isActive ? "0 4px 12px rgba(200, 16, 46,0.3)" : "0 1px 2px rgba(0,0,0,0.04)",
                 }}
               >
                 {c}
@@ -154,22 +154,55 @@ export default function Teams() {
               className="glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-300 hover:translate-y-[-3px]"
             >
               {/* Flag Image Banner */}
-              <div className="relative h-32 overflow-hidden flex items-center justify-center" style={{ background: `linear-gradient(135deg, ${t.accent}10, ${t.accent}05)` }}>
+              <div
+                className="relative h-36 overflow-hidden flex items-center justify-center"
+                style={{ background: `linear-gradient(135deg, ${t.accent}18 0%, #0D1042 60%, ${t.accent}08 100%)` }}
+              >
+                {/* Deep radial glow behind flag */}
+                <div
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  style={{
+                    background: `radial-gradient(ellipse 80% 70% at 50% 55%, ${t.accent}35 0%, ${t.accent}10 45%, transparent 75%)`,
+                  }}
+                />
+                {/* Outer soft halo ring */}
+                <div
+                  className="absolute rounded-full pointer-events-none"
+                  style={{
+                    width: "130px",
+                    height: "90px",
+                    background: `radial-gradient(ellipse at center, ${t.accent}22 0%, transparent 70%)`,
+                    filter: "blur(10px)",
+                  }}
+                />
+                {/* Crystal-clear flag */}
                 <img
-                  src={flagUrl(t.code)}
+                  src={`https://flagcdn.com/w160/${t.code}.png`}
                   alt={`${t.name} flag`}
-                  className="h-20 w-auto object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-105"
-                  style={{ maxWidth: "140px" }}
+                  className="relative z-10 object-contain transition-transform duration-500 group-hover:scale-110"
+                  style={{
+                    width: "152px",
+                    height: "auto",
+                    maxWidth: "160px",
+                    imageRendering: "crisp-edges",
+                    filter: "drop-shadow(0 6px 20px rgba(0,0,0,0.55)) drop-shadow(0 0 12px rgba(255,255,255,0.08)) contrast(1.08) saturate(1.2)",
+                    borderRadius: "4px",
+                  }}
+                />
+                {/* Glass shine overlay on flag */}
+                <div
+                  className="absolute inset-0 pointer-events-none z-20"
+                  style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 50%)" }}
                 />
                 {/* Group badge */}
-                <div className="absolute top-3 left-3">
-                  <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", fontWeight: 700, color: "#cbd5e1", background: "#ffffff", padding: "3px 8px", borderRadius: "6px", border: "1px solid #e2e8f0", boxShadow: "0 1px 3px rgba(0,0,0,0.06)" }}>
+                <div className="absolute top-3 left-3 z-30">
+                  <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", fontWeight: 700, color: "#F8F9FF", background: "rgba(13,16,66,0.75)", padding: "3px 8px", borderRadius: "6px", border: `1px solid ${t.accent}40`, backdropFilter: "blur(8px)", boxShadow: `0 0 8px ${t.accent}30` }}>
                     Group {t.group}
                   </span>
                 </div>
                 {/* Rank */}
-                <div className="absolute top-3 right-3">
-                  <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", fontWeight: 700, color: "#0ea5e9", background: "#e0f2fe", padding: "3px 7px", borderRadius: "6px", border: "1px solid #bae6fd" }}>
+                <div className="absolute top-3 right-3 z-30">
+                  <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", fontWeight: 700, color: "#C9A84C", background: "rgba(13,16,66,0.75)", padding: "3px 7px", borderRadius: "6px", border: "1px solid rgba(201,168,76,0.4)", backdropFilter: "blur(8px)" }}>
                     #{t.rank}
                   </span>
                 </div>
@@ -180,12 +213,12 @@ export default function Teams() {
                 <div className="flex items-start justify-between mb-1">
                   <h2
                     style={{ fontFamily: "Outfit", fontSize: "18px", fontWeight: 800, color: "#f8fafc", lineHeight: 1.2 }}
-                    className="group-hover:text-[#0ea5e9] transition-colors"
+                    className="group-hover:text-[#C8102E] transition-colors"
                   >
                     {t.name}
                   </h2>
                 </div>
-                <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#94a3b8", marginBottom: "8px" }}>{t.conf}</p>
+                <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#B8BDD9", marginBottom: "8px" }}>{t.conf}</p>
                 <p style={{ fontSize: "12px", color: "#cbd5e1", marginBottom: "6px" }}>
                   <span className="material-symbols-outlined text-[12px] mr-1" style={{ verticalAlign: "middle" }}>person</span>
                   {t.manager}
@@ -218,9 +251,9 @@ export default function Teams() {
         <div className="glass-card rounded-2xl p-10 text-center relative overflow-hidden mb-2">
           <div className="absolute inset-0 glow-bg-primary opacity-50 pointer-events-none" />
           <div className="relative z-10">
-            <span className="material-symbols-outlined text-4xl mb-3 block" style={{ color: "#0ea5e9", fontVariationSettings: "'FILL' 1" }}>sports_soccer</span>
+            <span className="material-symbols-outlined text-4xl mb-3 block" style={{ color: "#C8102E", fontVariationSettings: "'FILL' 1" }}>sports_soccer</span>
             <p className="font-headline-lg mb-2" style={{ color: "#f8fafc" }}>
-              Showing <strong style={{ color: "#0ea5e9" }}>{displayed.length}</strong> of <strong>{filtered.length}</strong> Qualified Nations
+              Showing <strong style={{ color: "#C8102E" }}>{displayed.length}</strong> of <strong>{filtered.length}</strong> Qualified Nations
             </p>
             <p style={{ color: "#cbd5e1", fontSize: "14px", marginBottom: "20px" }}>
               {hasMore
@@ -245,3 +278,4 @@ export default function Teams() {
     </div>
   );
 }
+

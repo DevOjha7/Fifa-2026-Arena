@@ -2,57 +2,60 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* ── Brand Colors ── */
-  --color-primary:              #0ea5e9;
-  --color-primary-dim:          #0284c7;
-  --color-primary-glow:         rgba(14, 165, 233, 0.2);
-  --color-accent:               #f59e0b;
-  --color-accent-dim:           #d97706;
-  --color-accent-glow:          rgba(245, 158, 11, 0.2);
+  /* ── FIFA 2026 Brand Colors ── */
+  --color-primary:              #C8102E;
+  --color-primary-dim:          #a50d25;
+  --color-primary-glow:         rgba(200, 16, 46, 0.25);
+  --color-accent:               #C9A84C;
+  --color-accent-dim:           #a8883a;
+  --color-accent-glow:          rgba(201, 168, 76, 0.25);
+  --color-navy:                 #1B1F5E;
+  --color-navy-deep:            #0F1240;
+  --color-navy-mid:             #252A7A;
 
   /* ── Surfaces ── */
-  --color-bg:                   #f8fafc;
-  --color-surface-0:            #f8fafc;
-  --color-surface-1:            #ffffff;
-  --color-surface-2:            #f1f5f9;
-  --color-surface-3:            #e8edf3;
-  --color-surface-4:            #dde3ec;
+  --color-bg:                   #0D1042;
+  --color-surface-0:            #0D1042;
+  --color-surface-1:            #131650;
+  --color-surface-2:            #1B1F5E;
+  --color-surface-3:            #252A7A;
+  --color-surface-4:            #2E3490;
 
   /* ── Text ── */
-  --color-text-primary:         #0f172a;
-  --color-text-secondary:       #475569;
-  --color-text-muted:           #94a3b8;
-  --color-text-accent:          #0ea5e9;
+  --color-text-primary:         #F8F9FF;
+  --color-text-secondary:       #B8BDD9;
+  --color-text-muted:           #7A80A8;
+  --color-text-accent:          #C9A84C;
 
   /* ── Borders ── */
-  --color-border:               #e2e8f0;
-  --color-border-mid:           #bae6fd;
-  --color-border-bright:        #7dd3fc;
+  --color-border:               rgba(201, 168, 76, 0.2);
+  --color-border-mid:           rgba(201, 168, 76, 0.4);
+  --color-border-bright:        rgba(201, 168, 76, 0.7);
 
   /* ── Legacy compat ── */
   --color-on-secondary-container: #92400e;
-  --color-surface-container:    #ffffff;
-  --color-surface-variant:      #f1f5f9;
-  --color-primary-container:    #e0f2fe;
-  --color-on-secondary:         #78350f;
-  --color-surface-container-low: #f8fafc;
-  --color-surface:              #ffffff;
+  --color-surface-container:    #131650;
+  --color-surface-variant:      #1B1F5E;
+  --color-primary-container:    rgba(200, 16, 46, 0.15);
+  --color-on-secondary:         #C9A84C;
+  --color-surface-container-low: #0D1042;
+  --color-surface:              #131650;
   --color-error:                #ef4444;
-  --color-on-surface:           #0f172a;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-high: #e2e8f0;
-  --color-primary-fixed-dim:    #38bdf8;
-  --color-secondary-container:  #fef3c7;
-  --color-secondary:            #f59e0b;
-  --color-surface-container-highest: #e2e8f0;
-  --color-on-primary-fixed:     #0c4a6e;
-  --color-secondary-fixed-dim:  #d97706;
-  --color-outline:              #94a3b8;
-  --color-on-surface-variant:   #475569;
+  --color-on-surface:           #F8F9FF;
+  --color-surface-container-lowest: #0D1042;
+  --color-surface-container-high: #252A7A;
+  --color-primary-fixed-dim:    #C8102E;
+  --color-secondary-container:  rgba(201, 168, 76, 0.15);
+  --color-secondary:            #C9A84C;
+  --color-surface-container-highest: #2E3490;
+  --color-on-primary-fixed:     #F8F9FF;
+  --color-secondary-fixed-dim:  #a8883a;
+  --color-outline:              #7A80A8;
+  --color-on-surface-variant:   #B8BDD9;
   --color-on-primary:           #ffffff;
-  --color-on-primary-container: #0c4a6e;
-  --color-background:           #f8fafc;
-  --color-on-background:        #0f172a;
+  --color-on-primary-container: #F8F9FF;
+  --color-background:           #0D1042;
+  --color-on-background:        #F8F9FF;
 
   /* ── Spacing ── */
   --spacing-margin-desktop:     80px;
@@ -87,8 +90,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background-color: #0f172a;
-  color: #f8fafc;
+  background-color: #0D1042;
+  color: #F8F9FF;
   overflow-x: hidden;
   font-family: "Inter", sans-serif;
   font-size: 15px;
@@ -181,70 +184,76 @@ body {
    Cards & Surfaces
 ═══════════════════════════════════════ */
 .glass-panel {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(13, 16, 66, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .glass-card {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(19, 22, 80, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 .glass-card:hover {
-  border-color: rgba(14, 165, 233, 0.4);
-  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+  border-color: rgba(201, 168, 76, 0.5);
+  box-shadow: 0 8px 40px rgba(201, 168, 76, 0.2), 0 0 0 1px rgba(201, 168, 76, 0.1);
   transform: translateY(-2px);
 }
 
 .stat-card {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(19, 22, 80, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(201, 168, 76, 0.18);
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.25s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 .stat-card:hover {
-  border-color: rgba(14, 165, 233, 0.4);
-  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.2);
+  border-color: rgba(200, 16, 46, 0.5);
+  box-shadow: 0 8px 40px rgba(200, 16, 46, 0.2);
   transform: translateY(-2px);
 }
 
 /* ═══════════════════════════════════════
-   Glow Backgrounds (Subtle Light)
+   Glow Backgrounds
 ═══════════════════════════════════════ */
 .neon-glow-primary {
-  box-shadow: 0 4px 20px rgba(14,165,233,0.2), 0 8px 40px rgba(14,165,233,0.1);
+  box-shadow: 0 4px 20px rgba(200,16,46,0.3), 0 8px 40px rgba(200,16,46,0.15);
 }
 .neon-glow-accent {
-  box-shadow: 0 4px 20px rgba(245,158,11,0.2), 0 8px 40px rgba(245,158,11,0.1);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.3), 0 8px 40px rgba(201,168,76,0.15);
 }
 .neon-text-glow {
-  text-shadow: 0 2px 12px rgba(14,165,233,0.35);
+  text-shadow: 0 2px 16px rgba(200,16,46,0.5);
 }
 .neon-text-gold {
-  text-shadow: 0 2px 12px rgba(245,158,11,0.45);
+  text-shadow: 0 2px 16px rgba(201,168,76,0.6);
 }
 
 /* ═══════════════════════════════════════
    Gradient Text
 ═══════════════════════════════════════ */
 .gradient-text-primary {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #38bdf8 100%);
+  background: linear-gradient(135deg, #C8102E 0%, #e8173e 50%, #ff2a52 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 .gradient-text-accent {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 60%, #fbbf24 100%);
+  background: linear-gradient(135deg, #C9A84C 0%, #e8c56a 50%, #f0d080 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-text-hero {
+  background: linear-gradient(135deg, #F8F9FF 0%, #C9A84C 40%, #C8102E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -255,7 +264,7 @@ body {
 ═══════════════════════════════════════ */
 .divider {
   border: none;
-  border-top: 1px solid #e2e8f0;
+  border-top: 1px solid rgba(201, 168, 76, 0.2);
   margin: 0;
 }
 
@@ -263,9 +272,9 @@ body {
    Scrollbar
 ═══════════════════════════════════════ */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+::-webkit-scrollbar-track { background: #0D1042; }
+::-webkit-scrollbar-thumb { background: rgba(201, 168, 76, 0.4); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201, 168, 76, 0.7); }
 .scroll-hide::-webkit-scrollbar { display: none; }
 
 /* ═══════════════════════════════════════
@@ -304,9 +313,23 @@ body {
   100% { background-position: 200% center; }
 }
 .shimmer {
-  background: linear-gradient(90deg, transparent, rgba(14,165,233,0.06), transparent);
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.08), transparent);
   background-size: 200% 100%;
   animation: shimmer 2.5s ease-in-out infinite;
+}
+
+/* Gold shimmer for trophy / accent elements */
+@keyframes gold-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.gold-shimmer {
+  background: linear-gradient(90deg, #C9A84C, #f0d080, #e8c56a, #C9A84C);
+  background-size: 300% 100%;
+  animation: gold-shimmer 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ═══════════════════════════════════════
@@ -314,8 +337,8 @@ body {
 ═══════════════════════════════════════ */
 .bg-grid {
   background-image:
-    linear-gradient(rgba(14, 165, 233, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
@@ -323,10 +346,13 @@ body {
    Radial Glow
 ═══════════════════════════════════════ */
 .glow-bg-primary {
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(14,165,233,0.07) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(200,16,46,0.1) 0%, transparent 70%);
 }
 .glow-bg-accent {
-  background: radial-gradient(ellipse 50% 40% at 50% 0%, rgba(245,158,11,0.07) 0%, transparent 65%);
+  background: radial-gradient(ellipse 50% 40% at 50% 0%, rgba(201,168,76,0.1) 0%, transparent 65%);
+}
+.glow-bg-navy {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 42, 122, 0.8) 0%, rgba(13, 16, 66, 1) 70%);
 }
 
 /* ═══════════════════════════════════════
@@ -345,19 +371,19 @@ body {
   text-transform: uppercase;
 }
 .badge-primary {
-  background: #e0f2fe;
-  border: 1px solid #bae6fd;
-  color: #0369a1;
+  background: rgba(200, 16, 46, 0.15);
+  border: 1px solid rgba(200, 16, 46, 0.4);
+  color: #ff4d6d;
 }
 .badge-accent {
-  background: #fef3c7;
-  border: 1px solid #fde68a;
-  color: #92400e;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  color: #C9A84C;
 }
 .badge-live {
-  background: #fee2e2;
-  border: 1px solid #fecaca;
-  color: #991b1b;
+  background: rgba(200, 16, 46, 0.2);
+  border: 1px solid rgba(200, 16, 46, 0.5);
+  color: #ff4d6d;
 }
 
 /* ═══════════════════════════════════════
@@ -369,7 +395,7 @@ body {
   justify-content: center;
   gap: 8px;
   padding: 12px 28px;
-  background: #0ea5e9;
+  background: linear-gradient(135deg, #C8102E, #e01535);
   color: #ffffff;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
@@ -378,10 +404,30 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(14,165,233,0.3);
+  box-shadow: 0 4px 20px rgba(200,16,46,0.4);
 }
-.btn-primary:hover { background: #0284c7; box-shadow: 0 6px 20px rgba(14,165,233,0.4); transform: translateY(-1px); }
+.btn-primary:hover { background: linear-gradient(135deg, #a50d25, #C8102E); box-shadow: 0 6px 28px rgba(200,16,46,0.55); transform: translateY(-1px); }
 .btn-primary:active { transform: scale(0.97); }
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #C9A84C, #e8c56a);
+  color: #0D1042;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 15px;
+  border-radius: 99px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+}
+.btn-gold:hover { background: linear-gradient(135deg, #a8883a, #C9A84C); box-shadow: 0 6px 28px rgba(201,168,76,0.55); transform: translateY(-1px); }
+.btn-gold:active { transform: scale(0.97); }
 
 .btn-outline {
   display: inline-flex;
@@ -390,16 +436,16 @@ body {
   gap: 8px;
   padding: 11px 28px;
   background: transparent;
-  color: #0ea5e9;
+  color: #C9A84C;
   font-family: "Outfit", sans-serif;
   font-weight: 600;
   font-size: 15px;
   border-radius: 99px;
-  border: 1.5px solid #0ea5e9;
+  border: 1.5px solid rgba(201, 168, 76, 0.6);
   cursor: pointer;
   transition: all 0.2s ease;
 }
-.btn-outline:hover { background: #e0f2fe; }
+.btn-outline:hover { background: rgba(201, 168, 76, 0.1); border-color: #C9A84C; }
 .btn-outline:active { transform: scale(0.97); }
 
 /* ═══════════════════════════════════════
@@ -407,13 +453,37 @@ body {
 ═══════════════════════════════════════ */
 .progress-track {
   height: 6px;
-  background: #e2e8f0;
+  background: rgba(255,255,255,0.1);
   border-radius: 99px;
   overflow: hidden;
 }
 .progress-fill {
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #0284c7, #0ea5e9);
-  box-shadow: 0 0 8px rgba(14,165,233,0.25);
+  background: linear-gradient(90deg, #C8102E, #C9A84C);
+  box-shadow: 0 0 10px rgba(201,168,76,0.4);
+}
+
+/* ═══════════════════════════════════════
+   FIFA 2026 Special Elements
+═══════════════════════════════════════ */
+.trophy-glow {
+  filter: drop-shadow(0 0 20px rgba(201, 168, 76, 0.6)) drop-shadow(0 0 40px rgba(201, 168, 76, 0.3));
+}
+
+.nation-stripe {
+  background: linear-gradient(90deg, #C8102E 0%, #1B1F5E 50%, #C9A84C 100%);
+  height: 3px;
+  width: 100%;
+}
+
+.gold-border {
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.1) inset;
+}
+
+.nav-active-glow {
+  background: rgba(200, 16, 46, 0.15);
+  border: 1px solid rgba(200, 16, 46, 0.3);
+  box-shadow: 0 0 12px rgba(200, 16, 46, 0.2);
 }

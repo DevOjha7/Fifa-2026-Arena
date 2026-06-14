@@ -51,7 +51,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ background: "#f8fafc" }}>
+    <div style={{ background: "#0D1042" }}>
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — Cristiano Ronaldo Background, Left-side text layout
@@ -67,13 +67,13 @@ export default function Home() {
             style={{ objectPosition: "center top" }}
           />
           {/* Gradient overlays */}
-          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(2,8,40,0.92) 0%, rgba(2,8,40,0.6) 40%, rgba(2,8,40,0.0) 60%, transparent 100%)" }} />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, rgba(248,250,252,1) 0%, rgba(248,250,252,0.2) 15%, transparent 30%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(13,16,66,0.94) 0%, rgba(13,16,66,0.65) 40%, rgba(13,16,66,0.0) 60%, transparent 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, rgba(13,16,66,1) 0%, rgba(13,16,66,0.2) 15%, transparent 30%)" }} />
         </div>
 
         {/* Decorative orbs */}
-        <div className="absolute top-24 left-[38%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%)" }} />
-        <div className="absolute bottom-32 left-[20%] w-[300px] h-[300px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(245,158,11,0.06) 0%, transparent 70%)" }} />
+        <div className="absolute top-24 left-[38%] w-[500px] h-[500px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(200, 16, 46,0.08) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-32 left-[20%] w-[300px] h-[300px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(201, 168, 76,0.06) 0%, transparent 70%)" }} />
 
         {/* Content */}
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 w-full py-24 md:py-0">
@@ -90,7 +90,7 @@ export default function Home() {
               </div>
 
               {/* Eyebrow */}
-              <p style={{ fontFamily: "JetBrains Mono", fontSize: "12px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#38bdf8", marginBottom: "16px" }}>
+              <p style={{ fontFamily: "JetBrains Mono", fontSize: "12px", letterSpacing: "0.2em", textTransform: "uppercase", color: "#C9A84C", marginBottom: "16px" }}>
                 ⚡ The Ultimate Prediction Platform
               </p>
 
@@ -98,21 +98,21 @@ export default function Home() {
               <h1 style={{ fontFamily: "Outfit, sans-serif", fontWeight: 900, fontSize: "clamp(44px, 5.5vw, 78px)", lineHeight: 1.0, letterSpacing: "-0.03em", color: "#ffffff", marginBottom: "28px" }}>
                 Predict<br />
                 Every Match.<br />
-                <span style={{ background: "linear-gradient(90deg, #38bdf8 0%, #0ea5e9 40%, #818cf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                <span style={{ background: "linear-gradient(90deg, #C9A84C 0%, #C8102E 40%, #818cf8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
                   Shape the Cup.
                 </span>
               </h1>
 
               {/* Subtext */}
               <p style={{ fontFamily: "Inter, sans-serif", fontSize: "18px", lineHeight: 1.65, color: "rgba(255,255,255,0.72)", maxWidth: "440px", marginBottom: "36px" }}>
-                Join <strong style={{ color: "#38bdf8" }}>{totalUsers > 0 ? totalUsers : "the community of"}</strong> football fans predicting FIFA World Cup 2026 results in real time. Climb the global leaderboard and win legendary prizes.
+                Join <strong style={{ color: "#C9A84C" }}>{totalUsers > 0 ? totalUsers : "the community of"}</strong> football fans predicting FIFA World Cup 2026 results in real time. Climb the global leaderboard and win legendary prizes.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <a href="/dashboard"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-[16px] transition-all active:scale-95"
-                  style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)", color: "#ffffff", boxShadow: "0 8px 28px rgba(14,165,233,0.5)", fontFamily: "Outfit" }}>
+                  style={{ background: "linear-gradient(135deg, #C8102E, #a50d25)", color: "#ffffff", boxShadow: "0 8px 28px rgba(200, 16, 46,0.5)", fontFamily: "Outfit" }}>
                   <span className="material-symbols-outlined text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
                   Start Predicting Free
                 </a>
@@ -159,7 +159,7 @@ export default function Home() {
                     </div>
                     <div className="text-center w-[40%]">
                       <div className="px-3 py-1 rounded-xl mb-2" style={{ background: "rgba(255,255,255,0.1)" }}>
-                        <p style={{ fontFamily: "Outfit", fontSize: "24px", fontWeight: 900, color: "#38bdf8" }}>VS</p>
+                        <p style={{ fontFamily: "Outfit", fontSize: "24px", fontWeight: 900, color: "#C9A84C" }}>VS</p>
                       </div>
                       <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "rgba(255,255,255,0.5)" }}>{featuredMatch.time} ET</span>
                     </div>
@@ -171,15 +171,15 @@ export default function Home() {
                   <div className="mb-3">
                     <div className="flex justify-between mb-1.5">
                       <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>Community Sentiment</span>
-                      <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", color: "#38bdf8" }}>{matchVotes} votes</span>
+                      <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", color: "#C9A84C" }}>{matchVotes} votes</span>
                     </div>
                     <div className="h-2 w-full rounded-full overflow-hidden flex" style={{ background: "rgba(255,255,255,0.1)" }}>
-                      <div style={{ width: `${sentimentPct.home}%`, background: "#38bdf8" }} />
+                      <div style={{ width: `${sentimentPct.home}%`, background: "#C9A84C" }} />
                       <div style={{ width: `${sentimentPct.draw}%`, background: "rgba(255,255,255,0.15)" }} />
                       <div style={{ width: `${sentimentPct.away}%`, background: "#f59e0b" }} />
                     </div>
                   </div>
-                  <a href="/matches" className="w-full block text-center py-3 rounded-xl font-bold text-[14px] transition-all" style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)", color: "#ffffff" }}>
+                  <a href="/matches" className="w-full block text-center py-3 rounded-xl font-bold text-[14px] transition-all" style={{ background: "linear-gradient(135deg, #C8102E, #a50d25)", color: "#ffffff" }}>
                     Make Your Prediction →
                   </a>
                 </div>
@@ -193,7 +193,7 @@ export default function Home() {
               <div className="w-full max-w-sm rounded-2xl p-5" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)", backdropFilter: "blur(24px)" }}>
                 <div className="flex items-center justify-between mb-4">
                   <span style={{ fontFamily: "Outfit", fontSize: "14px", fontWeight: 700, color: "#ffffff" }}>🏆 Top Predictors</span>
-                  <a href="/leaderboard" style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#38bdf8" }}>View All →</a>
+                  <a href="/leaderboard" style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#C9A84C" }}>View All →</a>
                 </div>
                 {topUsers.length === 0 ? (
                   <p className="text-sm text-slate-300">No predictors yet.</p>
@@ -213,7 +213,7 @@ export default function Home() {
                               <img src={flagUrl} alt="flag" className="h-3 w-4 rounded-sm object-cover opacity-80" />
                             </span>
                           </div>
-                          <span style={{ fontFamily: "Outfit", fontSize: "13px", fontWeight: 700, color: "#38bdf8" }}>{u.predictions * 50} pts</span>
+                          <span style={{ fontFamily: "Outfit", fontSize: "13px", fontWeight: 700, color: "#C9A84C" }}>{u.predictions * 50} pts</span>
                         </div>
                       );
                     })}
@@ -234,16 +234,16 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════
           LIVE TICKER
       ═══════════════════════════════════════════════════════════ */}
-      <div className="overflow-hidden border-y" style={{ borderColor: "#e2e8f0", background: "#0f172a" }}>
+      <div className="overflow-hidden border-y" style={{ borderColor: "#e2e8f0", background: "#0D1042" }}>
         <div className="scrolling-ticker py-4">
           {[1, 2].map((k) => (
             <div key={k} className="flex gap-16 items-center px-10">
               {[
-                { icon: "groups", label: "Live Predictions", value: "1,242,509", color: "#38bdf8" },
+                { icon: "groups", label: "Live Predictions", value: "1,242,509", color: "#C9A84C" },
                 { icon: "trending_up", label: "Top Pick", value: "Mexico 2–1 South Africa", color: "#f59e0b" },
-                { icon: "person", label: "Active Players", value: "42.8k Online", color: "#38bdf8" },
+                { icon: "person", label: "Active Players", value: "42.8k Online", color: "#C9A84C" },
                 { icon: "emoji_events", label: "Prize Pool", value: "$500,000", color: "#fbbf24" },
-                { icon: "sports_score", label: "Next Match In", value: "8 Days", color: "#38bdf8" },
+                { icon: "sports_score", label: "Next Match In", value: "8 Days", color: "#C9A84C" },
                 { icon: "star", label: "Top Predictor", value: "Tactical_Titan", color: "#f59e0b" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3 flex-shrink-0">
@@ -264,18 +264,18 @@ export default function Home() {
         {/* Background */}
         <div className="absolute inset-0">
           <img src="/massive_lineup.jpg" alt="Stadium Lineup" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "rgba(248,250,252,0.93)" }} />
+          <div className="absolute inset-0" style={{ background: "rgba(13,16,66,0.92)" }} />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-10">
-            <p style={{ fontFamily: "JetBrains Mono", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#0ea5e9", marginBottom: "8px" }}>By The Numbers</p>
-            <h2 className="font-headline-xl text-headline-xl" style={{ color: "#0f172a" }}>The World's Biggest Football Event</h2>
+            <p style={{ fontFamily: "JetBrains Mono", fontSize: "11px", letterSpacing: "0.18em", textTransform: "uppercase", color: "#C8102E", marginBottom: "8px" }}>By The Numbers</p>
+            <h2 className="font-headline-xl text-headline-xl" style={{ color: "#F8F9FF" }}>The World's Biggest Football Event</h2>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {[
-              { value: "1.2M+", label: "Active Predictors", icon: "groups", color: "#0ea5e9", bg: "#e0f2fe", desc: "Fans worldwide" },
+              { value: "1.2M+", label: "Active Predictors", icon: "groups", color: "#C8102E", bg: "rgba(201,168,76,0.1)", desc: "Fans worldwide" },
               { value: "104", label: "Total Matches", icon: "sports_soccer", color: "#f59e0b", bg: "#fef3c7", desc: "Group to Final" },
-              { value: "48", label: "Nations", icon: "public", color: "#0ea5e9", bg: "#e0f2fe", desc: "All Confederations" },
+              { value: "48", label: "Nations", icon: "public", color: "#C8102E", bg: "rgba(201,168,76,0.1)", desc: "All Confederations" },
               { value: "$500K", label: "Prize Pool", icon: "emoji_events", color: "#f59e0b", bg: "#fef3c7", desc: "Total Rewards" },
             ].map((s) => (
               <div key={s.label} className="stat-card text-center relative overflow-hidden group">
@@ -283,9 +283,9 @@ export default function Home() {
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4" style={{ background: s.bg }}>
                   <span className="material-symbols-outlined text-3xl" style={{ color: s.color, fontVariationSettings: "'FILL' 1" }}>{s.icon}</span>
                 </div>
-                <p style={{ fontFamily: "Outfit", fontSize: "38px", fontWeight: 900, color: "#0f172a", lineHeight: 1 }}>{s.value}</p>
-                <p style={{ fontFamily: "Outfit", fontSize: "15px", fontWeight: 600, color: "#0f172a", marginTop: "6px" }}>{s.label}</p>
-                <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#94a3b8", marginTop: "4px" }}>{s.desc}</p>
+                 <p style={{ fontFamily: "Outfit", fontSize: "38px", fontWeight: 900, color: "#F8F9FF", lineHeight: 1 }}>{s.value}</p>
+                 <p style={{ fontFamily: "Outfit", fontSize: "15px", fontWeight: 600, color: "#F8F9FF", marginTop: "6px" }}>{s.label}</p>
+                 <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#7A80A8", marginTop: "4px" }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -298,16 +298,16 @@ export default function Home() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/football_fans.png" alt="Stadium Crowd" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "rgba(248,250,252,0.92)" }} />
+          <div className="absolute inset-0" style={{ background: "rgba(13,16,66,0.91)" }} />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="flex items-end justify-between mb-10">
             <div>
               <span className="badge badge-primary mb-3">Featured</span>
-              <h2 className="font-headline-xl text-headline-xl" style={{ color: "#0f172a" }}>World Cup Stars</h2>
-              <p className="font-body-lg mt-2" style={{ color: "#475569", maxWidth: "420px" }}>Track elite athletes and make player-performance predictions for bonus points.</p>
+              <h2 className="font-headline-xl text-headline-xl" style={{ color: "#F8F9FF" }}>World Cup Stars</h2>
+              <p className="font-body-lg mt-2" style={{ color: "#B8BDD9", maxWidth: "420px" }}>Track elite athletes and make player-performance predictions for bonus points.</p>
             </div>
-            <a href="/teams" className="hidden md:flex items-center gap-2 font-medium text-[14px]" style={{ color: "#0ea5e9" }}>
+            <a href="/teams" className="hidden md:flex items-center gap-2 font-medium text-[14px]" style={{ color: "#C8102E" }}>
               Explore Teams <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
             </a>
           </div>
@@ -316,17 +316,17 @@ export default function Home() {
             {[
               {
                 img: "/superstars_poster.jpg",
-                badge: "Top Predictor", badgeIcon: "star", badgeColor: "#0ea5e9",
-                title: "Tactical Titan", desc: "Top 0.1% worldwide. Follow their picks and strategies for the group stages.", cta: "View Profile", ctaBg: "#0f172a",
+                badge: "Top Predictor", badgeIcon: "star", badgeColor: "#C8102E",
+                title: "Tactical Titan", desc: "Top 0.1% worldwide. Follow their picks and strategies for the group stages.", cta: "View Profile", ctaBg: "#0D1042",
               },
               {
                 img: "/haaland_26.jpg",
-                badge: "Precision Tracking", badgeIcon: "bolt", badgeColor: "#0ea5e9",
-                title: "Action-Based Rewards", desc: "Earn points for assists, saves, and key events during matches.", cta: "Boost Your Prediction", ctaBg: "#0ea5e9",
+                badge: "Precision Tracking", badgeIcon: "bolt", badgeColor: "#C8102E",
+                title: "Action-Based Rewards", desc: "Earn points for assists, saves, and key events during matches.", cta: "Boost Your Prediction", ctaBg: "#C8102E",
               },
             ].map((card) => (
               <a href="/dashboard" key={card.title} className="relative rounded-3xl overflow-hidden group cursor-pointer block" style={{ aspectRatio: "16/7" }}>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/90 via-[#0f172a]/30 to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1042]/90 via-[#0D1042]/30 to-transparent z-10" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity z-10" style={{ background: `${card.ctaBg}10` }} />
                 <img src={card.img} alt={card.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute bottom-0 left-0 right-0 z-20 p-8">
@@ -354,11 +354,11 @@ export default function Home() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/neymar_brazil.jpg" alt="Neymar Brazil Collage" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "rgba(15,23,42,0.96)" }} />
+          <div className="absolute inset-0" style={{ background: "rgba(13,16,66,0.96)" }} />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="text-center mb-14">
-            <span className="badge mb-4" style={{ background: "rgba(14,165,233,0.15)", border: "1px solid rgba(14,165,233,0.3)", color: "#38bdf8" }}>Platform Features</span>
+            <span className="badge mb-4" style={{ background: "rgba(200, 16, 46,0.15)", border: "1px solid rgba(200, 16, 46,0.3)", color: "#C9A84C" }}>Platform Features</span>
             <h2 className="font-headline-xl text-headline-xl mb-4" style={{ color: "#ffffff" }}>Everything You Need to Win</h2>
             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "17px", maxWidth: "480px", margin: "0 auto" }}>
               From AI-powered analytics to real-time leaderboards — the complete prediction ecosystem.
@@ -367,18 +367,18 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {([
-              { icon: "query_stats", title: "AI Predictions", desc: "Machine-learning models analyze form and odds to give you the winning edge.", color: "#38bdf8", img: "/football_action.png" },
+              { icon: "query_stats", title: "AI Predictions", desc: "Machine-learning models analyze form and odds to give you the winning edge.", color: "#C9A84C", img: "/football_action.png" },
               { icon: "leaderboard", title: "Global Rankings", desc: "Compete with 1.2M+ fans worldwide. Rise through legendary tiers.", color: "#f59e0b", img: "/global_rankings.jpg" },
               { icon: "stadium", title: "Stadium HUD", desc: "Real-time venue overlays, fan-zone maps, and location bonuses.", color: "#a78bfa", img: "/stadium_blue.jpg" },
               { icon: "emoji_events", title: "Prize Rewards", desc: "Win exclusive merchandise, tickets, and $500K in cash prizes.", color: "#f59e0b", img: "/prize_rewards_miami.jpg" },
-              { icon: "groups", title: "Friend Leagues", desc: "Create private leagues. Settle the debate of who's the football expert.", color: "#38bdf8", img: "/spain_team.jpg", pos: "center 25%" },
+              { icon: "groups", title: "Friend Leagues", desc: "Create private leagues. Settle the debate of who's the football expert.", color: "#C9A84C", img: "/spain_team.jpg", pos: "center 25%" },
               { icon: "notifications_active", title: "Match Alerts", desc: "Instant push notifications for line-ups, odds, and match reminders.", color: "#f43f5e", img: "/football_fans.png" },
             ] as { icon: string; title: string; desc: string; color: string; img: string; pos?: string; customScale?: number; fit?: string }[]).map((f) => (
               <a href="/dashboard" key={f.title} className="group rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300 hover:translate-y-[-4px] hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] block"
                 style={{ border: "1px solid rgba(255,255,255,0.08)" }}>
                 {/* Feature card background image */}
                 <div className="relative h-40 overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, rgba(15,23,42,0.92) 0%, rgba(15,23,42,0.4) 100%)", zIndex: 1 }} />
+                   <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, rgba(13,16,66,0.95) 0%, rgba(13,16,66,0.4) 100%)", zIndex: 1 }} />
                   <img src={f.img} alt={f.title} 
                     className={"transition-transform duration-700 " + (f.customScale ? "group-hover:scale-[1.05] " : "w-full h-full group-hover:scale-110 ") + (f.fit || "object-cover")} 
                     style={{ 
@@ -392,7 +392,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="p-6 transition-colors group-hover:bg-[#1e293b]/50" style={{ background: "rgba(255,255,255,0.04)", borderTop: `2px solid ${f.color}30` }}>
+                <div className="p-6 transition-colors group-hover:bg-[#131650]/50" style={{ background: "rgba(255,255,255,0.04)", borderTop: `2px solid ${f.color}30` }}>
                   <h3 style={{ fontFamily: "Outfit", fontSize: "18px", fontWeight: 700, color: "#ffffff", marginBottom: "8px" }}>{f.title}</h3>
                   <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.55)", lineHeight: 1.6 }}>{f.desc}</p>
                   <div className="mt-4 flex items-center gap-2" style={{ color: f.color }}>
@@ -412,14 +412,14 @@ export default function Home() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/players_pie.jpg" alt="Players Pie Chart" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "rgba(248,250,252,0.92)" }} />
+          <div className="absolute inset-0" style={{ background: "rgba(13,16,66,0.90)" }} />
         </div>
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <span className="badge badge-accent mb-4">16 Host Venues</span>
-              <h2 className="font-headline-xl text-headline-xl mb-5" style={{ color: "#0f172a" }}>Three Nations. <span className="gradient-text-accent">One Dream.</span></h2>
-              <p style={{ color: "#475569", fontSize: "17px", lineHeight: 1.7, maxWidth: "440px", marginBottom: "28px" }}>
+              <h2 className="font-headline-xl text-headline-xl mb-5" style={{ color: "#F8F9FF" }}>Three Nations. <span className="gradient-text-accent">One Dream.</span></h2>
+              <p style={{ color: "#B8BDD9", fontSize: "17px", lineHeight: 1.7, maxWidth: "440px", marginBottom: "28px" }}>
                 From the iconic Estadio Azteca to the ultra-modern SoFi Stadium — experience football history across 16 world-class venues.
               </p>
               <div className="flex flex-wrap gap-3 mb-8">
@@ -428,7 +428,7 @@ export default function Home() {
                   { city: "Los Angeles", flag: "🇺🇸" }, { city: "Dallas", flag: "🇺🇸" }, { city: "Miami", flag: "🇺🇸" },
                 ].map((c) => (
                   <span key={c.city} className="px-4 py-2 rounded-full text-[13px] font-medium"
-                    style={{ background: "#ffffff", border: "1px solid #e2e8f0", color: "#475569", boxShadow: "0 1px 3px rgba(0,0,0,0.04)" }}>
+                    style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(201,168,76,0.2)", color: "#B8BDD9" }}>
                     {c.flag} {c.city}
                   </span>
                 ))}
@@ -449,7 +449,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10" />
                   <img src={v.img} alt={v.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" style={{ objectPosition: v.pos || "center" }} />
                   <div className="absolute bottom-3 left-3 right-3 z-20">
-                    <p style={{ fontFamily: "Outfit", fontSize: "13px", fontWeight: 700, color: "#ffffff", transition: "color 0.3s" }} className="group-hover:text-[#38bdf8]">{v.name}</p>
+                    <p style={{ fontFamily: "Outfit", fontSize: "13px", fontWeight: 700, color: "#ffffff", transition: "color 0.3s" }} className="group-hover:text-[#C9A84C]">{v.name}</p>
                     <div className="flex items-center justify-between">
                       <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", color: "rgba(255,255,255,0.6)" }}>{v.city}</span>
                       <span style={{ fontFamily: "JetBrains Mono", fontSize: "9px", color: "#f59e0b" }}>{v.label}</span>
@@ -473,10 +473,10 @@ export default function Home() {
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
             <div className="lg:col-span-1">
-              <span className="badge mb-4" style={{ background: "rgba(245,158,11,0.15)", border: "1px solid rgba(245,158,11,0.3)", color: "#fbbf24" }}>Live Predictions</span>
+              <span className="badge mb-4" style={{ background: "rgba(201, 168, 76,0.15)", border: "1px solid rgba(201, 168, 76,0.3)", color: "#fbbf24" }}>Live Predictions</span>
               <h2 className="font-headline-xl text-headline-xl mb-4" style={{ color: "#ffffff" }}>Who Will Lift the Trophy?</h2>
               <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "15px", lineHeight: 1.7 }}>Millions of fans have cast their predictions. The community verdict is in — will you agree?</p>
-              <a href="/dashboard" className="mt-6 inline-flex items-center gap-2 font-bold text-[14px]" style={{ color: "#38bdf8" }}>
+              <a href="/dashboard" className="mt-6 inline-flex items-center gap-2 font-bold text-[14px]" style={{ color: "#C9A84C" }}>
                 View All Predictions <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </div>
@@ -484,7 +484,7 @@ export default function Home() {
               {[
                 { flag: "🇧🇷", code: "br", name: "Brazil", pct: 28.5, color: "#16a34a" },
                 { flag: "🇫🇷", code: "fr", name: "France", pct: 21.2, color: "#2563eb" },
-                { flag: "🇦🇷", code: "ar", name: "Argentina", pct: 18.4, color: "#38bdf8" },
+                { flag: "🇦🇷", code: "ar", name: "Argentina", pct: 18.4, color: "#C9A84C" },
                 { flag: "🇪🇸", code: "es", name: "Spain", pct: 12.1, color: "#dc2626" },
                 { flag: "🏴󠁧󠁢󠁥󠁮󠁧󠁿", code: "gb-eng", name: "England", pct: 9.8, color: "#a78bfa" },
               ].map((c, i) => (
@@ -512,13 +512,13 @@ export default function Home() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/stadium_red_sunset.jpg" alt="Night Stadium" className="w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(2,132,199,0.95) 0%, rgba(14,165,233,0.88) 50%, rgba(56,189,248,0.85) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(13,16,66,0.95) 0%, rgba(27,31,94,0.9) 40%, rgba(200,16,46,0.85) 100%)" }} />
         </div>
 
         <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 text-center">
           {/* Floating logo */}
           <div className="flex justify-center mb-6">
-            <img src="/logo.png" alt="FIFA 2026 Arena" className="h-20 w-20 object-contain drop-shadow-2xl" />
+            <img src="/fifa2026_logo.jpg" alt="FIFA World Cup 2026" className="h-20 w-20 object-cover rounded-2xl drop-shadow-2xl" style={{ border: "2px solid rgba(201,168,76,0.5)", boxShadow: "0 0 30px rgba(201,168,76,0.4)" }} />
           </div>
 
           <div className="badge inline-flex mb-6" style={{ background: "rgba(255,255,255,0.2)", border: "1px solid rgba(255,255,255,0.35)", color: "#ffffff" }}>
@@ -535,7 +535,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/dashboard"
               className="inline-flex items-center justify-center px-10 py-4 text-[17px] font-bold rounded-full transition-all active:scale-95"
-              style={{ background: "#ffffff", color: "#0284c7", boxShadow: "0 8px 28px rgba(0,0,0,0.2)", fontFamily: "Outfit" }}>
+              style={{ background: "#ffffff", color: "#a50d25", boxShadow: "0 8px 28px rgba(0,0,0,0.2)", fontFamily: "Outfit" }}>
               <span className="material-symbols-outlined text-[18px] mr-2" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
               Start Predicting Free
             </a>

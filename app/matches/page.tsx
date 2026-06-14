@@ -76,7 +76,7 @@ export default function Matches() {
         <img src="/mascot1.jpg" alt="Mascot" className="w-full h-auto rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] border-4 border-white/20" style={{ transform: "rotate(-4deg)" }} />
       </div>
       <div className="fixed inset-0 z-[-2] bg-cover bg-center" style={{ backgroundImage: "url('/bg-schedule.jpg')" }}></div>
-      <div className="fixed inset-0 z-[-1] bg-[#0f172a]/80 backdrop-blur-[2px]"></div>
+      <div className="fixed inset-0 z-[-1] bg-[#0D1042]/80 backdrop-blur-[2px]"></div>
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 py-12">
         {/* Header */}
         <div className="mb-12">
@@ -87,7 +87,7 @@ export default function Matches() {
           <h1 className="font-display-lg text-display-lg-mobile md:text-[52px] tracking-tight mb-4" style={{ color: "#f8fafc" }}>
             Match <span className="gradient-text-primary">Schedule</span>
           </h1>
-          <p className="font-body-lg" style={{ color: "#475569", maxWidth: "520px" }}>
+          <p className="font-body-lg" style={{ color: "#B8BDD9", maxWidth: "520px" }}>
             All 104 FIFA World Cup 2026 matches across USA, Canada &amp; Mexico. Predict every game and climb the global leaderboard.
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function Matches() {
             return (
               <button key={s} onClick={() => setActiveStage(s)}
                 className="px-5 py-2.5 rounded-full whitespace-nowrap font-medium text-[13px] transition-all duration-200 flex-shrink-0"
-                style={{ fontFamily: "Outfit, sans-serif", background: isActive ? "#0ea5e9" : "#ffffff", color: isActive ? "#ffffff" : "#475569", border: isActive ? "none" : "1px solid #e2e8f0", boxShadow: isActive ? "0 4px 12px rgba(14,165,233,0.3)" : "0 1px 2px rgba(0,0,0,0.04)" }}>
+                style={{ fontFamily: "Outfit, sans-serif", background: isActive ? "#C8102E" : "#ffffff", color: isActive ? "#ffffff" : "#B8BDD9", border: isActive ? "none" : "1px solid #e2e8f0", boxShadow: isActive ? "0 4px 12px rgba(200, 16, 46,0.3)" : "0 1px 2px rgba(0,0,0,0.04)" }}>
                 {s}
               </button>
             );
@@ -126,10 +126,10 @@ export default function Matches() {
                 {/* Top Row */}
                 <div className="flex items-start justify-between">
                   <div>
-                    <span className="badge" style={{ background: isFinal ? "#fef3c7" : "#e0f2fe", border: isFinal ? "1px solid #fde68a" : "1px solid #bae6fd", color: isFinal ? "#92400e" : "#0369a1" }}>
+                    <span className="badge" style={{ background: isFinal ? "#fef3c7" : "rgba(201,168,76,0.1)", border: isFinal ? "1px solid #fde68a" : "1px solid rgba(201,168,76,0.3)", color: isFinal ? "#92400e" : "#0369a1" }}>
                       {m.group} · Match {m.match}
                     </span>
-                    <div className="flex items-center gap-2 mt-2" style={{ color: "#94a3b8" }}>
+                    <div className="flex items-center gap-2 mt-2" style={{ color: "#B8BDD9" }}>
                       <span className="material-symbols-outlined text-[14px]">calendar_today</span>
                       <span style={{ fontFamily: "JetBrains Mono", fontSize: "12px" }}>{m.date} · {m.time}</span>
                     </div>
@@ -142,23 +142,71 @@ export default function Matches() {
 
                 {/* Teams */}
                 <div className="flex items-center justify-between py-2">
+                  {/* Home Team */}
                   <div className="flex flex-col items-center gap-2 w-[38%]">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden shadow-sm" style={{ border: "1px solid #e2e8f0" }}>
-                      <img src={flag(m.homeCode)} alt={m.home} className="w-full h-full object-cover" />
+                    <div
+                      className="relative flex items-center justify-center"
+                      style={{ width: "80px", height: "64px" }}
+                    >
+                      {/* Glow halo */}
+                      <div
+                        className="absolute inset-0 rounded-xl pointer-events-none"
+                        style={{
+                          background: "radial-gradient(ellipse at center, rgba(201,168,76,0.3) 0%, transparent 70%)",
+                          filter: "blur(8px)",
+                          transform: "scale(1.3)",
+                        }}
+                      />
+                      <img
+                        src={`https://flagcdn.com/w160/${m.homeCode}.png`}
+                        alt={m.home}
+                        className="relative z-10 w-full h-full rounded-xl"
+                        style={{
+                          objectFit: "cover",
+                          imageRendering: "crisp-edges",
+                          filter: "contrast(1.1) saturate(1.25) drop-shadow(0 4px 14px rgba(0,0,0,0.6))",
+                          border: "1.5px solid rgba(255,255,255,0.18)",
+                          boxShadow: "0 0 16px rgba(201,168,76,0.2), inset 0 1px 0 rgba(255,255,255,0.1)",
+                        }}
+                      />
                     </div>
-                    <span className="font-bold text-[14px] text-center" style={{ color: "#f8fafc", fontFamily: "Outfit, sans-serif" }}>
+                    <span className="font-bold text-[14px] text-center" style={{ color: "#F8F9FF", fontFamily: "Outfit, sans-serif" }}>
                       {m.home}
                     </span>
                   </div>
                   <div className="flex flex-col items-center gap-1">
-                    <span className="font-black text-[20px] italic" style={{ color: "#e2e8f0", fontFamily: "Outfit, sans-serif" }}>VS</span>
-                    <p style={{ fontFamily: "JetBrains Mono", fontSize: "10px", letterSpacing: "0.08em", color: "#94a3b8", textTransform: "uppercase", textAlign: "center" }}>{m.stage}</p>
+                    <span className="font-black text-[20px] italic" style={{ color: "#C9A84C", fontFamily: "Outfit, sans-serif", textShadow: "0 0 20px rgba(201,168,76,0.5)" }}>VS</span>
+                    <p style={{ fontFamily: "JetBrains Mono", fontSize: "10px", letterSpacing: "0.08em", color: "#7A80A8", textTransform: "uppercase", textAlign: "center" }}>{m.stage}</p>
                   </div>
+                  {/* Away Team */}
                   <div className="flex flex-col items-center gap-2 w-[38%]">
-                    <div className="w-16 h-16 rounded-xl overflow-hidden shadow-sm" style={{ border: "1px solid #e2e8f0" }}>
-                      <img src={flag(m.awayCode)} alt={m.away} className="w-full h-full object-cover" />
+                    <div
+                      className="relative flex items-center justify-center"
+                      style={{ width: "80px", height: "64px" }}
+                    >
+                      {/* Glow halo */}
+                      <div
+                        className="absolute inset-0 rounded-xl pointer-events-none"
+                        style={{
+                          background: "radial-gradient(ellipse at center, rgba(200,16,46,0.3) 0%, transparent 70%)",
+                          filter: "blur(8px)",
+                          transform: "scale(1.3)",
+                        }}
+                      />
+                      <img
+                        src={`https://flagcdn.com/w160/${m.awayCode}.png`}
+                        alt={m.away}
+                        className="relative z-10 w-full h-full rounded-xl"
+                        style={{
+                          objectFit: "cover",
+                          imageRendering: "crisp-edges",
+                          filter: "contrast(1.1) saturate(1.25) drop-shadow(0 4px 14px rgba(0,0,0,0.6))",
+                          border: "1.5px solid rgba(255,255,255,0.18)",
+                          boxShadow: "0 0 16px rgba(200,16,46,0.2), inset 0 1px 0 rgba(255,255,255,0.1)",
+                        }}
+                      />
                     </div>
-                    <span className="font-bold text-[14px] text-center" style={{ color: "#f8fafc", fontFamily: "Outfit, sans-serif" }}>
+                    <span className="font-bold text-[14px] text-center" style={{ color: "#F8F9FF", fontFamily: "Outfit, sans-serif" }}>
                       {m.away}
                     </span>
                   </div>
@@ -166,7 +214,7 @@ export default function Matches() {
 
                 {/* Venue */}
                 <div className="flex items-center justify-center gap-2 py-2" style={{ borderTop: "1px solid #f1f5f9", borderBottom: "1px solid #f1f5f9" }}>
-                  <span className="material-symbols-outlined text-[14px]" style={{ color: "#94a3b8" }}>location_on</span>
+                  <span className="material-symbols-outlined text-[14px]" style={{ color: "#B8BDD9" }}>location_on</span>
                   <span style={{ fontSize: "13px", color: "#cbd5e1", fontFamily: "Inter, sans-serif" }}>{m.venue}</span>
                 </div>
 
@@ -177,7 +225,7 @@ export default function Matches() {
                     return (
                       <button key={btn.key} onClick={() => predict(m.id, btn.key)}
                         className="flex-1 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-200 hover:brightness-110"
-                        style={{ fontFamily: "JetBrains Mono, monospace", background: isSelected ? "#0ea5e9" : "#1e293b", border: isSelected ? "1px solid #38bdf8" : "1px solid #475569", color: isSelected ? "#ffffff" : "#f8fafc", boxShadow: isSelected ? "0 4px 12px rgba(14,165,233,0.4)" : "none" }}>
+                        style={{ fontFamily: "JetBrains Mono, monospace", background: isSelected ? "#C8102E" : "#131650", border: isSelected ? "1px solid #C9A84C" : "1px solid #B8BDD9", color: isSelected ? "#ffffff" : "#f8fafc", boxShadow: isSelected ? "0 4px 12px rgba(200, 16, 46,0.4)" : "none" }}>
                         {isSelected ? "✓ " : ""}{btn.label}
                       </button>
                     );
@@ -187,17 +235,17 @@ export default function Matches() {
                 {/* Sentiment Bar */}
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#94a3b8" }}>Community Sentiment</span>
-                    <span style={{ fontFamily: "Outfit", fontSize: "12px", fontWeight: 700, color: "#0ea5e9" }}>{m.totalVotes} votes</span>
+                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#B8BDD9" }}>Community Sentiment</span>
+                    <span style={{ fontFamily: "Outfit", fontSize: "12px", fontWeight: 700, color: "#C8102E" }}>{m.totalVotes} votes</span>
                   </div>
                   <div className="h-2 w-full rounded-full overflow-hidden flex" style={{ background: "#f1f5f9" }}>
-                    <div style={{ width: `${homePct}%`, background: "#0ea5e9", height: "100%" }} />
+                    <div style={{ width: `${homePct}%`, background: "#C8102E", height: "100%" }} />
                     <div style={{ width: `${drawPct}%`, background: "#e2e8f0", height: "100%" }} />
                     <div style={{ width: `${awayPct}%`, background: "#f59e0b", height: "100%" }} />
                   </div>
                   <div className="flex justify-between mt-1.5">
-                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#0ea5e9" }}>{m.home} {homePct}%</span>
-                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#94a3b8" }}>{drawPct}%</span>
+                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#C8102E" }}>{m.home} {homePct}%</span>
+                    <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#B8BDD9" }}>{drawPct}%</span>
                     <span style={{ fontFamily: "JetBrains Mono", fontSize: "10px", color: "#f59e0b" }}>{awayPct}% {m.away}</span>
                   </div>
                 </div>
@@ -212,7 +260,7 @@ export default function Matches() {
           <div className="glass-card rounded-2xl p-8 md:col-span-2 relative overflow-hidden">
             <div className="badge badge-primary mb-4">Premium</div>
             <h3 className="font-headline-xl text-headline-xl mb-3" style={{ color: "#f8fafc" }}>Prime Predictor Perks</h3>
-            <p className="font-body-lg mb-6" style={{ color: "#475569", maxWidth: "400px" }}>Join the elite circle. Earn exclusive rewards, stadium access, and digital currency for accurate predictions.</p>
+            <p className="font-body-lg mb-6" style={{ color: "#B8BDD9", maxWidth: "400px" }}>Join the elite circle. Earn exclusive rewards, stadium access, and digital currency for accurate predictions.</p>
             <button className="btn-primary">Unlock Premium Access</button>
           </div>
           <div className="glass-card rounded-2xl p-8 flex flex-col items-center justify-center text-center gap-4">
@@ -220,8 +268,8 @@ export default function Matches() {
               <span className="material-symbols-outlined text-3xl" style={{ color: "#f59e0b", fontVariationSettings: "'FILL' 1" }}>emoji_events</span>
             </div>
             <h4 className="font-headline-lg text-headline-lg" style={{ color: "#f8fafc" }}>Arena Jackpots</h4>
-            <p style={{ color: "#475569", fontSize: "14px" }}>Group Stage Mega Pool. Total Prize: $2.5M USD.</p>
-            <a href="/dashboard" className="font-bold text-sm" style={{ color: "#0ea5e9" }}>View Rules →</a>
+            <p style={{ color: "#B8BDD9", fontSize: "14px" }}>Group Stage Mega Pool. Total Prize: $2.5M USD.</p>
+            <a href="/dashboard" className="font-bold text-sm" style={{ color: "#C8102E" }}>View Rules →</a>
           </div>
         </div>
 

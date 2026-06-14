@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect, useMemo } from "react";
 
 const allTeams = [
@@ -101,20 +101,20 @@ export default function Dashboard() {
         <img src="/mascot2.jpg" alt="Mascot" className="w-full h-auto rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] border-4 border-white/20" style={{ transform: "rotate(-4deg)" }} />
       </div>
       <div className="fixed inset-0 z-[-2] bg-cover" style={{ backgroundImage: "url('/bg-predictions.jpg')", backgroundPosition: "center bottom" }}></div>
-      <div className="fixed inset-0 z-[-1] bg-[#0f172a]/70 backdrop-blur-[6px]"></div>
+      <div className="fixed inset-0 z-[-1] bg-[#0D1042]/70 backdrop-blur-[6px]"></div>
       
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 py-12">
 
         {/* Header */}
         <div className="mb-12">
-          <div className="badge inline-flex mb-4 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(14,165,233,0.2)", color: "#0ea5e9", border: "1px solid rgba(14,165,233,0.3)" }}>
+          <div className="badge inline-flex mb-4 px-3 py-1 rounded-full text-xs font-bold" style={{ background: "rgba(200, 16, 46,0.2)", color: "#C8102E", border: "1px solid rgba(200, 16, 46,0.3)" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-sky-400 mr-2 pulse-live" />
             Live Global Consensus
           </div>
           <h1 className="font-display-lg text-display-lg-mobile md:text-[52px] tracking-tight mb-4" style={{ color: "#f8fafc" }}>
-            World Cup <span className="gradient-text-primary" style={{ background: "linear-gradient(90deg, #38bdf8, #0ea5e9)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Predictions</span>
+            World Cup <span className="gradient-text-primary" style={{ background: "linear-gradient(90deg, #C9A84C, #C8102E)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Predictions</span>
           </h1>
-          <p className="font-body-lg" style={{ color: "#94a3b8", maxWidth: "520px" }}>
+          <p className="font-body-lg" style={{ color: "#B8BDD9", maxWidth: "520px" }}>
             Harness the wisdom of the crowd. Cast your vote for the ultimate tournament winner and see how the community feels.
           </p>
         </div>

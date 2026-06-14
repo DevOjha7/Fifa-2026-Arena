@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 import { useState, useMemo, useEffect } from "react";
 
 const tierStyle: Record<string, { icon: string; color: string; bg: string; border: string }> = {
   gold:   { icon: "workspace_premium", color: "#d97706", bg: "rgba(217, 119, 6, 0.2)", border: "#fde68a" },
   silver: { icon: "workspace_premium", color: "#cbd5e1", bg: "rgba(203, 213, 225, 0.1)", border: "#e2e8f0" },
   bronze: { icon: "workspace_premium", color: "#b45309", bg: "rgba(217, 119, 6, 0.2)", border: "#fde68a" },
-  base:   { icon: "", color: "#94a3b8", bg: "rgba(30, 41, 59, 0.5)", border: "#e2e8f0" },
+  base:   { icon: "", color: "#B8BDD9", bg: "rgba(30, 41, 59, 0.5)", border: "#e2e8f0" },
 };
 
 const PAGE_SIZE = 6;
@@ -73,7 +73,7 @@ export default function Leaderboard() {
         <img src="/mascot5.jpg" alt="Mascot" className="w-full h-auto rounded-3xl shadow-[0_0_30px_rgba(0,0,0,0.5)] border-4 border-white/20" style={{ transform: "rotate(-4deg)" }} />
       </div>
       <div className="fixed inset-0 z-[-2] bg-cover bg-top" style={{ backgroundImage: "url('/bg-leaderboard.jpg')" }}></div>
-      <div className="fixed inset-0 z-[-1] bg-[#0f172a]/80 backdrop-blur-[1px]"></div>
+      <div className="fixed inset-0 z-[-1] bg-[#0D1042]/80 backdrop-blur-[1px]"></div>
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-10 py-12">
 
         {/* Header */}
@@ -86,7 +86,7 @@ export default function Leaderboard() {
             <h1 className="font-display-lg text-display-lg-mobile md:text-[52px] tracking-tight mb-4" style={{ color: "#f8fafc" }}>
               World <span className="gradient-text-primary">Rankings</span>
             </h1>
-            <p className="font-body-lg" style={{ color: "#475569", maxWidth: "460px" }}>The global arena of elite tacticians. Every prediction brings you closer to legendary status.</p>
+            <p className="font-body-lg" style={{ color: "#B8BDD9", maxWidth: "460px" }}>The global arena of elite tacticians. Every prediction brings you closer to legendary status.</p>
           </div>
           <div className="badge badge-primary text-sm px-4 py-2 flex-shrink-0">
             <span className="material-symbols-outlined text-[14px]">groups</span>
@@ -99,10 +99,10 @@ export default function Leaderboard() {
         <div className="glass-card rounded-2xl p-7 mb-5 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           <div className="flex items-center gap-5 md:col-span-2">
             <div className="relative flex-shrink-0">
-              <div className="w-16 h-16 rounded-full overflow-hidden" style={{ border: "3px solid #0ea5e9", boxShadow: "0 0 20px rgba(14,165,233,0.2)" }}>
+              <div className="w-16 h-16 rounded-full overflow-hidden" style={{ border: "3px solid #C8102E", boxShadow: "0 0 20px rgba(200, 16, 46,0.2)" }}>
                 <img src={myProfile.avatar} alt="Me" className="w-full h-full object-cover bg-sky-50" />
               </div>
-              <span className="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full text-[9px] font-bold" style={{ background: "#0ea5e9", color: "#ffffff" }}>YOU</span>
+              <span className="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full text-[9px] font-bold" style={{ background: "#C8102E", color: "#ffffff" }}>YOU</span>
             </div>
             <div>
               <h2 className="font-headline-lg text-headline-lg flex items-center gap-2" style={{ color: "#f8fafc" }}>
@@ -110,12 +110,12 @@ export default function Leaderboard() {
               </h2>
               <div className="flex flex-wrap gap-5 mt-3">
                 {[
-                  { label: "Current Rank", value: `#${myProfile.rank}`, color: "#0ea5e9" },
+                  { label: "Current Rank", value: `#${myProfile.rank}`, color: "#C8102E" },
                   { label: "Predictions", value: myProfile.predictions, color: "#d97706" },
                   { label: "Total Points", value: myProfile.points.toLocaleString(), color: "#f8fafc" },
                 ].map((s) => (
                   <div key={s.label}>
-                    <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#94a3b8" }}>{s.label}</p>
+                    <p style={{ fontFamily: "JetBrains Mono", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#B8BDD9" }}>{s.label}</p>
                     <p style={{ fontFamily: "Outfit", fontSize: "22px", fontWeight: 800, color: s.color, lineHeight: 1.1 }}>{s.value}</p>
                   </div>
                 ))}
@@ -136,7 +136,7 @@ export default function Leaderboard() {
               <div className="progress-track"><div className="progress-fill" style={{ width: "80%" }} /></div>
             </div>
             <div className="flex gap-2">
-              <button className="flex-1 py-2.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm transition-all" style={{ background: "#0ea5e9", color: "#ffffff" }}>
+              <button className="flex-1 py-2.5 rounded-xl flex items-center justify-center gap-2 font-medium text-sm transition-all" style={{ background: "#C8102E", color: "#ffffff" }}>
                 <span className="material-symbols-outlined text-[16px]">share</span> Share
               </button>
             </div>
@@ -151,13 +151,13 @@ export default function Leaderboard() {
         {!loading && (
         <div className="glass-card rounded-2xl overflow-hidden mb-16">
           {/* Header */}
-          <div className="flex items-center justify-between px-7 py-5" style={{ borderBottom: "1px solid #334155", background: "rgba(30, 41, 59, 0.6)" }}>
+          <div className="flex items-center justify-between px-7 py-5" style={{ borderBottom: "1px solid #252A7A", background: "rgba(30, 41, 59, 0.6)" }}>
             <h3 className="font-headline-lg text-headline-lg" style={{ color: "#f8fafc" }}>Top Predictors</h3>
             <div className="relative">
-              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[16px]" style={{ color: "#94a3b8" }}>search</span>
+              <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[16px]" style={{ color: "#B8BDD9" }}>search</span>
               <input type="text" placeholder="Search users..." value={search} onChange={(e) => handleSearch(e.target.value)}
                 className="pl-9 pr-4 py-2 rounded-lg text-sm outline-none transition-all"
-                style={{ background: "rgba(30, 41, 59, 0.6)", border: "1px solid #334155", color: "#f8fafc", width: "220px", fontFamily: "Inter" }} />
+                style={{ background: "rgba(30, 41, 59, 0.6)", border: "1px solid #252A7A", color: "#f8fafc", width: "220px", fontFamily: "Inter" }} />
             </div>
           </div>
 
@@ -166,7 +166,7 @@ export default function Leaderboard() {
               <thead>
                 <tr >
                   {["Rank", "Player", "Predictions", "Points"].map((h, i) => (
-                    <th key={h} className="px-7 py-4" style={{ fontFamily: "JetBrains Mono", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#94a3b8", textAlign: i === 0 || i === 1 ? "left" : "center" }}>
+                    <th key={h} className="px-7 py-4" style={{ fontFamily: "JetBrains Mono", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#B8BDD9", textAlign: i === 0 || i === 1 ? "left" : "center" }}>
                       {h}
                     </th>
                   ))}
@@ -175,7 +175,7 @@ export default function Leaderboard() {
               <tbody>
                 {pageData.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="px-7 py-10 text-center" style={{ color: "#94a3b8", fontFamily: "Inter" }}>
+                    <td colSpan={4} className="px-7 py-10 text-center" style={{ color: "#B8BDD9", fontFamily: "Inter" }}>
                       No predictors found for "{search}"
                     </td>
                   </tr>
@@ -184,14 +184,14 @@ export default function Leaderboard() {
                   const isMe = u.id === activeUserId;
                   return (
                     <tr key={u.id} className="group transition-all duration-150 cursor-pointer"
-                      style={{ borderBottom: "1px solid #334155", background: isMe ? "rgba(14, 165, 233, 0.1)" : "transparent" }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = isMe ? "rgba(14, 165, 233, 0.1)" : "rgba(255,255,255,0.05)"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = isMe ? "rgba(14, 165, 233, 0.1)" : ""; }}>
+                      style={{ borderBottom: "1px solid #252A7A", background: isMe ? "rgba(200, 16, 46, 0.1)" : "transparent" }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = isMe ? "rgba(200, 16, 46, 0.1)" : "rgba(255,255,255,0.05)"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = isMe ? "rgba(200, 16, 46, 0.1)" : ""; }}>
                       <td className="px-7 py-5">
                         {tc.icon ? (
                           <span className="material-symbols-outlined text-[22px]" style={{ color: tc.color, fontVariationSettings: "'FILL' 1" }}>{tc.icon}</span>
                         ) : (
-                          <span style={{ fontFamily: "Outfit", fontSize: "18px", fontWeight: 700, color: "#94a3b8" }}>{String(u.rank).padStart(2, "0")}</span>
+                          <span style={{ fontFamily: "Outfit", fontSize: "18px", fontWeight: 700, color: "#B8BDD9" }}>{String(u.rank).padStart(2, "0")}</span>
                         )}
                       </td>
                       <td className="px-7 py-5">
@@ -201,7 +201,7 @@ export default function Leaderboard() {
                           </div>
                           <div>
                             <div className="flex items-center gap-2">
-                              <span style={{ fontFamily: "Outfit", fontSize: "15px", fontWeight: 700, color: "#f8fafc" }} className="group-hover:text-[#0ea5e9] transition-colors">{u.name}</span>
+                              <span style={{ fontFamily: "Outfit", fontSize: "15px", fontWeight: 700, color: "#f8fafc" }} className="group-hover:text-[#C8102E] transition-colors">{u.name}</span>
                               <span></span>
                               {isMe && <span className="ml-2 px-1.5 py-0.5 rounded text-[9px] font-bold bg-sky-500 text-white">YOU</span>}
                             </div>
@@ -223,26 +223,26 @@ export default function Leaderboard() {
 
           {/* Pagination */}
           {totalPages > 1 && (
-          <div className="flex justify-between items-center px-7 py-4" style={{ borderTop: "1px solid #334155", background: "rgba(30, 41, 59, 0.6)" }}>
-            <p style={{ fontSize: "13px", color: "#94a3b8" }}>
+          <div className="flex justify-between items-center px-7 py-4" style={{ borderTop: "1px solid #252A7A", background: "rgba(30, 41, 59, 0.6)" }}>
+            <p style={{ fontSize: "13px", color: "#B8BDD9" }}>
               Showing <span style={{ color: "#f8fafc" }}>{(page - 1) * PAGE_SIZE + 1}–{Math.min(page * PAGE_SIZE, filtered.length)}</span> of <span style={{ color: "#f8fafc" }}>{filtered.length.toLocaleString()}</span> predictors
             </p>
             <div className="flex gap-1.5">
               <button disabled={page === 1} onClick={() => setPage((p) => Math.max(1, p - 1))}
                 className="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-                style={{ background: "rgba(30, 41, 59, 0.6)", color: page === 1 ? "#334155" : "#cbd5e1", border: "1px solid #334155", cursor: page === 1 ? "not-allowed" : "pointer" }}>
+                style={{ background: "rgba(30, 41, 59, 0.6)", color: page === 1 ? "#252A7A" : "#cbd5e1", border: "1px solid #252A7A", cursor: page === 1 ? "not-allowed" : "pointer" }}>
                 <span className="material-symbols-outlined text-[18px]">chevron_left</span>
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
                 <button key={p} onClick={() => setPage(p)}
                   className="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold transition-all"
-                  style={{ background: p === page ? "#0ea5e9" : "rgba(30, 41, 59, 0.6)", color: p === page ? "#ffffff" : "#cbd5e1", border: p === page ? "none" : "1px solid #334155", boxShadow: p === page ? "0 2px 8px rgba(14,165,233,0.3)" : "none" }}>
+                  style={{ background: p === page ? "#C8102E" : "rgba(30, 41, 59, 0.6)", color: p === page ? "#ffffff" : "#cbd5e1", border: p === page ? "none" : "1px solid #252A7A", boxShadow: p === page ? "0 2px 8px rgba(200, 16, 46,0.3)" : "none" }}>
                   {p}
                 </button>
               ))}
               <button disabled={page === totalPages} onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                 className="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-                style={{ background: "rgba(30, 41, 59, 0.6)", color: page === totalPages ? "#334155" : "#cbd5e1", border: "1px solid #334155", cursor: page === totalPages ? "not-allowed" : "pointer" }}>
+                style={{ background: "rgba(30, 41, 59, 0.6)", color: page === totalPages ? "#252A7A" : "#cbd5e1", border: "1px solid #252A7A", cursor: page === totalPages ? "not-allowed" : "pointer" }}>
                 <span className="material-symbols-outlined text-[18px]">chevron_right</span>
               </button>
             </div>
